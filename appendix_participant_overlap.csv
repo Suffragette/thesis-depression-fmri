@@ -1,0 +1,30 @@
+ds003007_id,group,ds002748_id,person_match_evidence,baseline_scan_relationship,also_identical_in_ds002749
+sub-01,no_treatment,sub-18,scan byte-identical,IDENTICAL file (byte-for-byte),yes
+sub-02,no_treatment,sub-08,scan byte-identical,IDENTICAL file (byte-for-byte),yes
+sub-03,no_treatment,sub-19,scan byte-identical,IDENTICAL file (byte-for-byte),yes
+sub-04,no_treatment,sub-12,scan byte-identical,IDENTICAL file (byte-for-byte),yes
+sub-05,no_treatment,sub-01,scan byte-identical,IDENTICAL file (byte-for-byte),yes
+sub-06,no_treatment,sub-06,scan byte-identical,IDENTICAL file (byte-for-byte),yes
+sub-07,no_treatment,sub-17,scan byte-identical,IDENTICAL file (byte-for-byte),yes
+sub-08,no_treatment,sub-13,scan byte-identical,IDENTICAL file (byte-for-byte),yes
+sub-09,no_treatment,sub-04,scan byte-identical,IDENTICAL file (byte-for-byte),yes
+sub-10,no_treatment,sub-15,scan byte-identical,IDENTICAL file (byte-for-byte),yes
+sub-11,no_treatment,sub-02,scan byte-identical,IDENTICAL file (byte-for-byte),yes
+sub-12,no_treatment,sub-09,scan byte-identical,IDENTICAL file (byte-for-byte),yes
+sub-13,no_treatment,sub-20,scan byte-identical,IDENTICAL file (byte-for-byte),yes
+sub-14,no_treatment,sub-11,scan byte-identical,IDENTICAL file (byte-for-byte),yes
+sub-15,no_treatment,sub-14,scan byte-identical,IDENTICAL file (byte-for-byte),yes
+sub-16,cbt,sub-33,scan byte-identical,IDENTICAL file (byte-for-byte),no
+sub-17,cbt,sub-26,scan byte-identical,IDENTICAL file (byte-for-byte),no
+sub-18,cbt,sub-29,scan byte-identical,IDENTICAL file (byte-for-byte),no
+sub-19,cbt,sub-25,scan byte-identical,IDENTICAL file (byte-for-byte),no
+sub-20,cbt,sub-27,scan byte-identical,IDENTICAL file (byte-for-byte),no
+sub-21,nfb,sub-43,scan byte-identical,IDENTICAL file (byte-for-byte),no
+sub-22,nfb,sub-47,scan byte-identical,IDENTICAL file (byte-for-byte),no
+sub-23,cbt,sub-44,scan byte-identical,IDENTICAL file (byte-for-byte),no
+sub-24,cbt,sub-41,scan voxel-identical,IDENTICAL voxels (header/affine differs),yes
+sub-25,cbt,sub-40,scan voxel-identical,IDENTICAL voxels (header/affine differs),yes
+sub-26,nfb,sub-48,scan byte-identical,IDENTICAL file (byte-for-byte),no
+sub-27,nfb,sub-49,scan byte-identical,IDENTICAL file (byte-for-byte),no
+sub-28,nfb,sub-51,psychometric battery 11/11,INDEPENDENT (genuinely different acquisition),no
+sub-29,nfb,sub-42,scan byte-identical,IDENTICAL file (byte-for-byte),no

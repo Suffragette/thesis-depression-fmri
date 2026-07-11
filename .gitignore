@@ -1,0 +1,10 @@
+data/
+derivatives/
+*.nii
+*.nii.gz
+*.mat
+*.tar.gz
+*.png
+.ipynb_checkpoints/
+.DS_Store
+__pycache__/

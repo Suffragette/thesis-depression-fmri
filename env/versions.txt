@@ -1,0 +1,10 @@
+# Καταγραφή ακριβών εκδόσεων (COBIDAS reproducibility)
+fMRIPrep      : 21.0.2 (δημόσια derivatives ds002748) + 25.2.x (σχεδιασμένο για robustness)
+GIFT          : gift-master (trendscenter) — MOO-ICAR
+NeuroMark     : fMRI 2.2 (105 δίκτυα, modelorder-multi)
+MATLAB        : R2026a (26.1.0.3276743, Update 3)
+SPM           : spm12 (για reslicing template)
+NBS toolbox   : 1.2
+Python        : 3.13
+nilearn       : 0.14.0
+nibabel       : 5.4.2
