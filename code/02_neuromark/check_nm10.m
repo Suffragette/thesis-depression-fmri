@@ -1,0 +1,15 @@
+clear; clc;
+ROOT='/Users/hedylamarr/Documents/MATLAB/thesis_scripts';
+D=dir(fullfile(ROOT,'output_study2_nm10','*postprocess_results','*post_process_sub_*.mat'));
+[~,ord]=sort({D.name}); D=D(ord);
+fprintf('=== 5. FILE ORDER ===\n first=%s  last=%s  n=%d\n\n', D(1).name, D(end).name, numel(D));
+S=load(fullfile(D(1).folder,D(1).name)); M=squeeze(S.fnc_corrs);
+fprintf('=== 1. SYMMETRY ===\n');
+fprintf(' M(43,26)=%+.4f   M(26,43)=%+.4f\n', M(43,26), M(26,43));
+fprintf(' M(45,43)=%+.4f   M(43,45)=%+.4f\n', M(45,43), M(43,45));
+fprintf(' max|M-M''| = %.2e   lower-tri all zero? %d\n', max(abs(M(:)-reshape(M',[],1))), all(all(tril(M,-1)==0)));
+fprintf(' diag: %+.3f %+.3f\n\n', M(1,1), M(50,50));
+fprintf('=== 4. GROUPS from tsv ===\n');
+T=readtable(fullfile(ROOT,'clinical_study2.tsv'),'FileType','text','Delimiter','\t','TreatAsEmpty',{'n/a'});
+g=string(T.group);
+fprintf(' NT =%s\n CBT=%s\n NFB=%s\n\n', mat2str(find(g=="depr_no_treatment")'), mat2str(find(g=="depr_cbt")'), mat2str(find(g=="depr_nfb")'));
