@@ -1,4 +1,4 @@
-%% cNBS/NBS: depr vs control, 72 atoma (51 depr + 21 control) - TELIKH ANALYSH
+%% NBS: depr vs control, 72 atoma (51 depr + 21 control) - TELIKH ANALYSH
 clear; clc;
 
 OUT  = '/Users/hedylamarr/Documents/MATLAB/thesis_scripts/output72';

@@ -1,4 +1,4 @@
-%% cNBS/NBS: σύγκριση depr vs control στα FNC matrices (20 άτομα pilot)
+%% NBS: σύγκριση depr vs control στα FNC matrices (20 άτομα pilot)
 clear; clc;
 
 OUT = '/Users/hedylamarr/Documents/MATLAB/thesis_scripts/output20';
