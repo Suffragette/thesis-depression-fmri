@@ -84,7 +84,7 @@ Raw data are not stored here (large, already public). Available from OpenNeuro:
 | Script | What it does | Thesis |
 |---|---|---|
 | run_cnbs_H1_triple.m | Confirmatory triple-network NBS (FWER) | 3.1 |
-| run_cnbs_72.m, run_cnbs.m | Supporting / pilot NBS | 3.1 |
+| run_nbs_72.m, run_nbs.m | Supporting / pilot NBS | 3.1 |
 | chance_audit.m | Are the paper's counts above chance? | 3.1 |
 | perm_null.m | Empirical permutation null | 3.1 |
 | check_domains.m | Domain-level comparison (granularity) | 3.1 |
