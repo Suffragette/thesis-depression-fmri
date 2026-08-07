@@ -116,3 +116,24 @@ Spatial matching (spatial_corr*.m, dmn_centroids*.m, postdmn_22.m, rsn_dmn_centr
 - NBS - Network-Based Statistic, FWER-controlled (Zalesky et al., 2010)
 - Nilearn - denoising / nuisance regression
 - Languages: Python, MATLAB, Bash
+
+## How to reproduce
+
+The full analysis runs in two environments: preprocessing in Python (Neurodesk), network identification and statistics in MATLAB.
+
+1. **Get the data.** Download both datasets from OpenNeuro: ds002748 (Study 1) and ds003007 (Study 2).
+
+2. **Preprocess** (Python / Neurodesk). Run fMRIPrep, then the denoising scripts in code/01_preprocessing/. The batch drivers handle all subjects:
+   - run_all_denoise.sh (Study 1 baseline denoising)
+   - run_A3.sh (the preprocessing variants V2 / V5 / Vpaper)
+   - run_all_study2.sh (Study 2)
+
+3. **Identify networks** (MATLAB + GIFT). Run the NeuroMark batch scripts in code/02_neuromark/ (e.g. my_neuromark_72.m), then compute functional network connectivity (code/03_fnc/).
+
+4. **Run the statistics** (MATLAB). The scripts in code/04_statistics/ reproduce each result, e.g.:
+   - run_cnbs_H1_triple.m - the confirmatory Network-Based Statistic (Section 3.1)
+   - a3_direction.m - sign-stability across pipelines (Section 3.2)
+   - lagshift_study1.m - connectivity-metric sensitivity (Section 3.5)
+   - tost_peredge.m - equivalence testing (Section 3.10)
+
+See the script inventory above for what each script does and which section it supports.
