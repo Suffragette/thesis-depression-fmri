@@ -11,7 +11,7 @@
 % ΠΡΟΣΟΧΗ: fnc_corrs = Fisher-z (τιμές >1 αναμενόμενες).
 
 clear; clc;
-ROOT='/Users/hedylamarr/Documents/MATLAB/thesis_scripts';
+ROOT='.';
 FNCDIR=fullfile(ROOT,'output72','nmark72_postprocess_results');
 DMN=94:101; ECN=91:93;
 DEP=1:51; HC=52:72;   % index -> group

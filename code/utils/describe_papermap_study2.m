@@ -5,7 +5,7 @@
 % Αντιστοίχιση ΟΝΟΜΑΤΩΝ, ΟΧΙ χαρτών (χάρτες paper αδημοσίευτοι).
 clear; clc;
 
-ROOT   = '/Users/hedylamarr/Documents/MATLAB/thesis_scripts';
+ROOT   = '.';
 FNCDIR = fullfile(ROOT,'output_study2','nmark_s2_postprocess_results');
 NSUB = 29; THR = 0.5;
 

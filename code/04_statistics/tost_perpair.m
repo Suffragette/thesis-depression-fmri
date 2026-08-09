@@ -13,7 +13,7 @@
 %     1-9   DMN-LFr      t=-2.93 -> d = -0.759
 clear; clc;
 
-PP    = '/Users/hedylamarr/Documents/MATLAB/thesis_scripts/output72/nmark72_postprocess_results';
+PP    = './output72/nmark72_postprocess_results';
 nSub  = 72; nDep = 51;
 NOI   = 91:105;                 % ECN 91-93, DMN 94-101, SAL 102-105
 ALPHA = 0.05;
@@ -84,7 +84,7 @@ end
 fprintf('\nMedian smallest rejectable |d| across connections: %.2f\n', median(rows(~isnan(rows(:,7)),7)));
 fprintf('(i.e. typically we can exclude effects larger than about this)\n');
 
-save('/Users/hedylamarr/Documents/MATLAB/thesis_scripts/tost_perpair_results.mat','rows','dom','NOI');
+save('./tost_perpair_results.mat','rows','dom','NOI');
 fprintf('\nSaved tost_perpair_results.mat\n');
 
 function s = yn(v),  if v, s='YES'; else, s='no'; end, end

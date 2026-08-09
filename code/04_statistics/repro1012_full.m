@@ -10,7 +10,7 @@
 % ΕΠΙΦΥΛΑΞΗ Γ: σκέλη β/γ σε n=10-14 (MADRS: ~4-5). Το paper βρίσκει εκεί r=±1.00 (Table 9)=θόρυβος.
 
 clear; clc;
-ROOT   = '/Users/hedylamarr/Documents/MATLAB/thesis_scripts';
+ROOT   = '.';
 FNCDIR = fullfile(ROOT,'output_study2','nmark_s2_postprocess_results');
 CLIN   = fullfile(ROOT,'clinical_study2.tsv');
 NSUB=29; DMN=94:101; ECN=91:93;

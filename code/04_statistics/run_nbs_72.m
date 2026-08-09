@@ -1,9 +1,9 @@
 %% NBS: depr vs control, 72 atoma (51 depr + 21 control) - TELIKH ANALYSH
 clear; clc;
 
-OUT  = '/Users/hedylamarr/Documents/MATLAB/thesis_scripts/output72';
+OUT  = './output72';
 PP   = fullfile(OUT, 'nmark72_postprocess_results');
-WORK = '/Users/hedylamarr/Documents/MATLAB/thesis_scripts/nbs_work72';
+WORK = './nbs_work72';
 if ~exist(WORK,'dir'); mkdir(WORK); end
 nSub = 72; nComp = 105;
 

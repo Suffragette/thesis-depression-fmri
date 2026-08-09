@@ -1,9 +1,9 @@
 %% Auto-match 20 data-driven ICs to NeuroMark 2.2 - FIXED (proper SPM reslice)
 clear; clc;
 
-DDIR = '/Users/hedylamarr/Documents/MATLAB/thesis_scripts/output_dataica20';
+DDIR = './output_dataica20';
 ddICA = fullfile(DDIR, 'dataica20_agg__component_ica_.nii');
-nmTemplate = '/Users/hedylamarr/Documents/MATLAB/GIFT/gift-master/GroupICAT/icatb/icatb_templates/Neuromark_fMRI_2.2_modelorder-multi.nii';
+nmTemplate = '<MATLAB_ROOT>/GIFT/gift-master/GroupICAT/icatb/icatb_templates/Neuromark_fMRI_2.2_modelorder-multi.nii';
 WORK = fullfile(DDIR,'match_work'); if ~exist(WORK,'dir'); mkdir(WORK); end
 
 % Copy DD as reference (target space)

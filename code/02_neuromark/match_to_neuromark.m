@@ -2,9 +2,9 @@
 %  Identifies which data-driven component corresponds to DMN/ECN/Salience.
 clear; clc;
 
-DDIR = '/Users/hedylamarr/Documents/MATLAB/thesis_scripts/output_dataica20';
+DDIR = './output_dataica20';
 ddICA = fullfile(DDIR, 'dataica20_agg__component_ica_.nii');   % 20 components
-nmTemplate = '/Users/hedylamarr/Documents/MATLAB/GIFT/gift-master/GroupICAT/icatb/icatb_templates/Neuromark_fMRI_2.2_modelorder-multi.nii'; % 105
+nmTemplate = '<MATLAB_ROOT>/GIFT/gift-master/GroupICAT/icatb/icatb_templates/Neuromark_fMRI_2.2_modelorder-multi.nii'; % 105
 
 fprintf('Loading data-driven ICs (20)...\n');
 Vdd = icatb_spm_vol(ddICA);

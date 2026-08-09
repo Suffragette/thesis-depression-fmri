@@ -3,7 +3,7 @@
 %  This matches the paper's coarse-network granularity (fair comparison).
 clear; clc;
 
-OUT  = '/Users/hedylamarr/Documents/MATLAB/thesis_scripts/output72';
+OUT  = './output72';
 PP   = fullfile(OUT, 'nmark72_postprocess_results');
 nSub = 72; nComp = 105;
 

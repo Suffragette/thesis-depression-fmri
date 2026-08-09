@@ -3,7 +3,7 @@
 % ΔΕΝ υπάρχει αντιστοίχιση επιπέδου component (χάρτες ICA αδημοσίευτοι).
 % LFr (IC9): κανένα αντίστοιχο ICN -> IC9-IC16 και IC1-IC9 ΜΗ ΑΝΤΙΣΤΟΙΧΙΣΙΜΑ.
 clear; clc;
-ROOT   = '/Users/hedylamarr/Documents/MATLAB/thesis_scripts';
+ROOT   = '.';
 FNCDIR = fullfile(ROOT,'output_study2','nmark_s2_postprocess_results');
 THRESH = 0.5; NSUB = 29;
 ECN=91:93; DMN=94:101; SAL=102:105; TN=[ECN DMN SAL];

@@ -1,5 +1,5 @@
 clear; clc;
-ROOT='/Users/hedylamarr/Documents/MATLAB/thesis_scripts';
+ROOT='.';
 DMN=94:101; ECN=91:93;
 mWk=triu(true(numel(DMN)),1);
 g=[true(51,1);false(21,1)];

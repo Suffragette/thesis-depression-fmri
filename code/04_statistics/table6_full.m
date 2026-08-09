@@ -9,7 +9,7 @@
 % ΑΝΤΙΣΤΟΙΧΙΣΗ IC paper (Table 5): ΟΝΟΜΑΣΤΙΚΗ, όχι χωρικά επικυρωμένη.
 
 clear; clc;
-ROOT='/Users/hedylamarr/Documents/MATLAB/thesis_scripts';
+ROOT='.';
 FNCDIR=fullfile(ROOT,'output_study2','nmark_s2_postprocess_results');
 NSUB=29; DMN=94:101; ECN=91:93;
 

@@ -4,7 +4,7 @@
 %    clinical_study2.tsv      (copy of ds003007 participants.tsv)
 %    mean_fd_study2.tsv       (participant_id / session / mean_fd)
 clear; clc;
-D = '/Users/hedylamarr/Documents/MATLAB/thesis_scripts';
+D = '.';
 
 %% ================= (a) MOTION QC =================
 fdF = fullfile(D,'mean_fd_study2.tsv');

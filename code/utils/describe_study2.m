@@ -1,7 +1,7 @@
 %% STUDY 2: FULL DESCRIPTIVE REPORT, SUBJECT BY SUBJECT
 %  No inference. Every number, every person. Evaluation comes after.
 clear; clc;
-D = '/Users/hedylamarr/Documents/MATLAB/thesis_scripts';
+D = '.';
 load(fullfile(D,'study2_delta_domain.mat'));           % PRE POST DELTA labels (29 x 6)
 cl = readtable(fullfile(D,'clinical_study2.tsv'),'FileType','text', ...
                'Delimiter','\t','TreatAsMissing',{'n/a'});

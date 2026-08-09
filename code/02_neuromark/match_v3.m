@@ -3,9 +3,9 @@
 %  use Spearman (robust to scale), report clear r per IC.
 clear; clc;
 
-DDIR = '/Users/hedylamarr/Documents/MATLAB/thesis_scripts/output_dataica20';
+DDIR = './output_dataica20';
 ddICA = fullfile(DDIR, 'dataica20_agg__component_ica_.nii');
-rNM = '/Users/hedylamarr/Documents/MATLAB/GIFT/gift-master/GroupICAT/icatb/icatb_templates/rNeuromark_fMRI_2.2_modelorder-multi.nii';
+rNM = '<MATLAB_ROOT>/GIFT/gift-master/GroupICAT/icatb/icatb_templates/rNeuromark_fMRI_2.2_modelorder-multi.nii';
 
 if ~exist(rNM,'file')
     error('Resliced NeuroMark not found - run match_v2 first to create it');

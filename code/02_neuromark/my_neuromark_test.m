@@ -14,7 +14,7 @@ modalityType = 'fMRI';
 TR = 2.5;
 
 % Output
-outputDir = '/Users/hedylamarr/Documents/MATLAB/thesis_scripts/output_test';
+outputDir = './output_test';
 prefix    = 'nmark2p2';
 
 % Data selection method (1/2/3/4). This template uses Method 4.
@@ -23,11 +23,11 @@ dataSelectionMethod = 4;
 % Method 4: list subject files (rows = subjects, cols = sessions)
 % Example: 2 subjects, 1 session
 input_data_file_patterns = {
-    '/Users/hedylamarr/Documents/MATLAB/thesis_scripts/data_clean/sub-01_clean_smooth.nii'
-    '/Users/hedylamarr/Documents/MATLAB/thesis_scripts/data_clean/sub-02_clean_smooth.nii'
-    '/Users/hedylamarr/Documents/MATLAB/thesis_scripts/data_clean/sub-03_clean_smooth.nii'
-    '/Users/hedylamarr/Documents/MATLAB/thesis_scripts/data_clean/sub-04_clean_smooth.nii'
-    '/Users/hedylamarr/Documents/MATLAB/thesis_scripts/data_clean/sub-05_clean_smooth.nii'
+    './data_clean/sub-01_clean_smooth.nii'
+    './data_clean/sub-02_clean_smooth.nii'
+    './data_clean/sub-03_clean_smooth.nii'
+    './data_clean/sub-04_clean_smooth.nii'
+    './data_clean/sub-05_clean_smooth.nii'
 };
 
 % Optional: per-subject design matrices (only used for certain keyword_designMatrix settings)

@@ -5,7 +5,7 @@
 
 clear; clc;
 
-ROOT   = '/Users/hedylamarr/Documents/MATLAB/thesis_scripts';
+ROOT   = '.';
 FNCDIR = fullfile(ROOT,'output_study2','nmark_s2_postprocess_results');
 PREFIX = 'nmark_s2_post_process_sub_';
 OUT_LONG = fullfile(ROOT,'describe_tn_study2_long.csv');

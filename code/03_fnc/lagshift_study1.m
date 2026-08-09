@@ -14,7 +14,7 @@
 %          contrasts and for all 105 triple-network connections.
 clear; clc;
 
-DIR   = '/Users/hedylamarr/Documents/MATLAB/thesis_scripts/output72';
+DIR   = './output72';
 nSub  = 72; nDep = 51;
 ECN   = 91:93; DMN = 94:101; SAL = 102:105;
 NOI   = [ECN DMN SAL];          % 15 components

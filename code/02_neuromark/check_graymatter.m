@@ -3,14 +3,14 @@
 %  Component is ACCEPTED if it correlates more with GM than WM or CSF.
 clear; clc;
 
-ddICA = '/Users/hedylamarr/Documents/MATLAB/thesis_scripts/output_dataica20/dataica20_agg__component_ica_.nii';
+ddICA = './output_dataica20/dataica20_agg__component_ica_.nii';
 Vdd = icatb_spm_vol(ddICA);
 nDD = numel(Vdd);
 
 % Find SPM tissue probability maps (TPM) - GM/WM/CSF
 tpmCandidates = {
-  '/Users/hedylamarr/Documents/MATLAB/spm12-main/tpm/TPM.nii'
-  '/Users/hedylamarr/Documents/MATLAB/spm12/tpm/TPM.nii'
+  '<MATLAB_ROOT>/spm12-main/tpm/TPM.nii'
+  '<MATLAB_ROOT>/spm12/tpm/TPM.nii'
 };
 tpm = '';
 for i=1:numel(tpmCandidates)
@@ -18,7 +18,7 @@ for i=1:numel(tpmCandidates)
 end
 if isempty(tpm)
     % search
-    d = dir('/Users/hedylamarr/Documents/MATLAB/**/TPM.nii');
+    d = dir('<MATLAB_ROOT>/**/TPM.nii');
     if ~isempty(d), tpm=fullfile(d(1).folder,d(1).name); end
 end
 fprintf('TPM file: %s\n', tpm);
@@ -31,7 +31,7 @@ Vtpm = icatb_spm_vol(tpm);
 fprintf('TPM has %d tissue volumes\n', numel(Vtpm));
 
 % Reslice TPM to DD space
-WORK='/Users/hedylamarr/Documents/MATLAB/thesis_scripts/tpm_work';
+WORK='./tpm_work';
 if ~exist(WORK,'dir'), mkdir(WORK); end
 refCopy=fullfile(WORK,'ref.nii'); copyfile(ddICA, refCopy);
 tpmCopy=fullfile(WORK,'tpm.nii'); copyfile(tpm, tpmCopy);
@@ -72,4 +72,4 @@ for i=1:numel(NOI)
     ok = ismember(NOI(i),accepted);
     fprintf('IC%02d (%s): %s\n', NOI(i), nm{i}, string(ok)*"GM-valid" + (~ok)*"ARTIFACT!");
 end
-save('/Users/hedylamarr/Documents/MATLAB/thesis_scripts/output_dataica20/gm_filter.mat','accepted');
+save('./output_dataica20/gm_filter.mat','accepted');

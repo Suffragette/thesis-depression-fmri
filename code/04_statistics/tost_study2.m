@@ -6,7 +6,7 @@
 %   11-16 DMN-ECN  TR  : t=2.44 n=14 -> dz=0.652
 %   11-16 DMN-ECN  NFB : t=3.35 n=6  -> dz=1.368
 clear; clc;
-ROOT='/Users/hedylamarr/Documents/MATLAB/thesis_scripts';
+ROOT='.';
 FNCDIR=fullfile(ROOT,'output_study2','nmark_s2_postprocess_results');
 DMN=94:101; ECN=91:93; ALPHA=0.05;
 Z=nan(58,105,105);

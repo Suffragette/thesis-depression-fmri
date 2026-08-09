@@ -3,9 +3,9 @@
 %  72 subjects (51 depr + 21 control). Prespecified analysis (no public timestamp).
 clear; clc;
 
-OUT  = '/Users/hedylamarr/Documents/MATLAB/thesis_scripts/output72';
+OUT  = './output72';
 PP   = fullfile(OUT, 'nmark72_postprocess_results');
-WORK = '/Users/hedylamarr/Documents/MATLAB/thesis_scripts/nbs_work72_H1';
+WORK = './nbs_work72_H1';
 if ~exist(WORK,'dir'); mkdir(WORK); end
 nSub = 72; nComp = 105;
 

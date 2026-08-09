@@ -4,7 +4,7 @@
 % Dual criterion per correlation: (1) sign vs paper, (2) significance.
 % Flags: sample size (some n=4-5!), and triple-network mappability.
 clear; clc;
-ROOT='/Users/hedylamarr/Documents/MATLAB/thesis_scripts';
+ROOT='.';
 FD=fullfile(ROOT,'output_study2','nmark_s2_postprocess_results');
 DMN=94:101; ECN=91:93;
 Z=nan(58,105,105);

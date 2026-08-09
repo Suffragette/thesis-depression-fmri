@@ -3,7 +3,7 @@
 % Καμία ανθρώπινη επιλογή. Centroid βάρους |z| -> πρόσημο Y = posterior/anterior.
 
 clear; clc;
-NII = '/Users/hedylamarr/Documents/MATLAB/thesis_scripts/output_test/rNeuromark_fMRI_2.2_modelorder-multi.nii';
+NII = './output_test/rNeuromark_fMRI_2.2_modelorder-multi.nii';
 DMN = 94:101;
 
 info = niftiinfo(NII);
@@ -47,8 +47,8 @@ fprintf('\n=== ΑΠΟΤΕΛΕΣΜΑ (αυτόματο, Y<0) ===\n');
 fprintf('POSTERIOR-DMN: %s\n', mat2str(post'));
 fprintf('anterior-DMN : %s\n', mat2str(ante'));
 
-save('/Users/hedylamarr/Documents/MATLAB/thesis_scripts/dmn_centroids.mat','res','post','ante');
-writematrix(res, '/Users/hedylamarr/Documents/MATLAB/thesis_scripts/dmn_centroids.csv');
+save('./dmn_centroids.mat','res','post','ante');
+writematrix(res, './dmn_centroids.csv');
 fprintf('\nΑποθηκεύτηκε: dmn_centroids.mat / .csv\n');
 
 function o = ternary(c,a,b), if c, o=a; else, o=b; end, end

@@ -3,7 +3,7 @@
 %  Part 2: do any connections change consistently across subjects?
 %  Part 3: for consistent connections, breakdown by treatment group
 clear; clc;
-D  = '/Users/hedylamarr/Documents/MATLAB/thesis_scripts';
+D  = '.';
 PP = fullfile(D,'output_study2','nmark_s2_postprocess_results');
 
 dom = strings(105,1);

@@ -5,7 +5,7 @@
 % A single-edge effect of 0.14 becomes ~0.005 in a 28-edge mean: undetectable.
 % Fix: run TOST on each edge separately, same SESOI, report how many are excluded.
 clear; clc;
-ROOT='/Users/hedylamarr/Documents/MATLAB/thesis_scripts';
+ROOT='.';
 DMN=94:101; ECN=91:93; A=0.05;
 [i1,i2]=find(triu(true(numel(DMN)),1)); W=[DMN(i1)' DMN(i2)'];
 [e1,e2]=ndgrid(DMN,ECN); E=[e1(:) e2(:)];

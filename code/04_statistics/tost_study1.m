@@ -11,7 +11,7 @@
 %  TOST at a range of bounds, smallest rejectable |d|, JZS Bayes factor.
 clear; clc;
 
-PP    = '/Users/hedylamarr/Documents/MATLAB/thesis_scripts/output72/nmark72_postprocess_results';
+PP    = './output72/nmark72_postprocess_results';
 nSub  = 72;
 nDep  = 51;                    % sub-001..051 depressed, sub-052..072 control
 ECN   = 91:93;

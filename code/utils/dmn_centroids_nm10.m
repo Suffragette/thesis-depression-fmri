@@ -2,7 +2,7 @@
 % Objective anterior vs posterior DMN in NeuroMark 1.0 (ICN 43-49).
 % Same method as dmn_centroids.m for 2.2. |z|-weighted MNI centroid; sign of Y.
 clear; clc;
-NII = '/Users/hedylamarr/Documents/MATLAB/thesis_scripts/output_study2_nm10/rNeuromark_fMRI_1.0.nii';
+NII = './output_study2_nm10/rNeuromark_fMRI_1.0.nii';
 DMN = 43:49;
 
 info = niftiinfo(NII);
@@ -44,6 +44,6 @@ if isempty(ante)
 else
     fprintf('>> 1.0 DOES separate anterior/posterior. Targeted test possible.\n');
 end
-save('/Users/hedylamarr/Documents/MATLAB/thesis_scripts/dmn_centroids_nm10.mat','res','post','ante');
+save('./dmn_centroids_nm10.mat','res','post','ante');
 
 function o=ternary(c,a,b), if c, o=a; else, o=b; end, end

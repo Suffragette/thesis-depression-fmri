@@ -4,9 +4,9 @@
 %  Μέθοδος: regress out [age, sex, FD] από το contrast score, TOST στα residuals.
 clear; clc;
 
-PP    = '/Users/hedylamarr/Documents/MATLAB/thesis_scripts/output72/nmark72_postprocess_results';
-PART  = '/Users/hedylamarr/Documents/MATLAB/thesis_scripts/participants_study1.tsv';
-FDF   = '/Users/hedylamarr/Documents/MATLAB/thesis_scripts/mean_fd_study1.tsv';
+PP    = './output72/nmark72_postprocess_results';
+PART  = './participants_study1.tsv';
+FDF   = './mean_fd_study1.tsv';
 nSub=72; nDep=51; ECN=91:93; DMN=94:101; ALPHA=0.05;
 
 %% FNC

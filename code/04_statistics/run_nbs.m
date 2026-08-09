@@ -1,9 +1,9 @@
 %% NBS: σύγκριση depr vs control στα FNC matrices (20 άτομα pilot)
 clear; clc;
 
-OUT = '/Users/hedylamarr/Documents/MATLAB/thesis_scripts/output20';
+OUT = './output20';
 PP  = fullfile(OUT, 'nmark20_postprocess_results');
-WORK = '/Users/hedylamarr/Documents/MATLAB/thesis_scripts/nbs_work';
+WORK = './nbs_work';
 if ~exist(WORK,'dir'); mkdir(WORK); end
 nSub = 20; nComp = 105;
 

@@ -2,7 +2,7 @@
 %  Identified networks: DMN=IC06, ECN={12,14,18}, SAL={01,09}
 clear; clc;
 
-DDIR = '/Users/hedylamarr/Documents/MATLAB/thesis_scripts/output_dataica20';
+DDIR = './output_dataica20';
 PP   = fullfile(DDIR, 'dataica20_postprocess_results');
 nSub = 72;
 

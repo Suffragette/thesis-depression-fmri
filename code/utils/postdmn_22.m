@@ -8,7 +8,7 @@
 % PAPER CLAIM (Table 6): 10-12 = posterior cingulate/precuneus <-> hybrid DMN/LFr,
 %   NT n=15, pre .45 -> post .31, t=2.21 p=.044  => DECREASE
 clear; clc;
-ROOT='/Users/hedylamarr/Documents/MATLAB/thesis_scripts';
+ROOT='.';
 FD=fullfile(ROOT,'output_study2','nmark_s2_postprocess_results');
 POST=[96 97 98 99]; ANT=[95 100 101]; ALLD=94:101; ECN=91:93;
 Z=nan(58,105,105);

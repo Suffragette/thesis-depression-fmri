@@ -137,3 +137,5 @@ The full analysis runs in two environments: preprocessing in Python (Neurodesk),
    - tost_peredge.m - equivalence testing (Section 3.10)
 
 See the script inventory above for what each script does and which section it supports.
+
+**Note on denoising variant numbering:** the variants are numbered V0 (baseline), V2 (no-aCompCor), V5 (no-bandpass), plus Vpaper (paper-matched). The intermediate numbers (V1, V3, V4) were design placeholders that were not implemented, since these four variants covered all the comparisons needed to isolate each preprocessing factor.

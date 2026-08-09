@@ -1,5 +1,5 @@
 clear; clc;
-NII='/Users/hedylamarr/Documents/MATLAB/thesis_scripts/output_study2_nm10/rNeuromark_fMRI_1.0.nii';
+NII='./output_study2_nm10/rNeuromark_fMRI_1.0.nii';
 info=niftiinfo(NII); vol=niftiread(info); A=info.Transform.T'; dim=info.ImageSize(1:3);
 fprintf('%-7s %8s %8s %8s  %s\n','ICN','peakX','peakY','peakZ','likely');
 for c=43:49

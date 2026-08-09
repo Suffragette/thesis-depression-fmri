@@ -3,17 +3,17 @@
 % 1.0 has 7 DMN subnodes (2 ACC + 2 PCC + 3 PCu) = ICN 43-49 (Du et al. 2020).
 modalityType = 'fMRI';
 TR = 2.5;
-outputDir = '/Users/hedylamarr/Documents/MATLAB/thesis_scripts/output_study2_nm10';
+outputDir = './output_study2_nm10';
 prefix    = 'nmark10_s2';
 dataSelectionMethod = 4;
 input_data_file_patterns = cell(58,1);
 for ii = 1:29
-    input_data_file_patterns{2*ii-1} = sprintf('/Users/hedylamarr/Documents/MATLAB/thesis_scripts/data_study2/sub-%02d_ses-pre_clean_smooth.nii', ii);
-    input_data_file_patterns{2*ii}   = sprintf('/Users/hedylamarr/Documents/MATLAB/thesis_scripts/data_study2/sub-%02d_ses-post_clean_smooth.nii', ii);
+    input_data_file_patterns{2*ii-1} = sprintf('./data_study2/sub-%02d_ses-pre_clean_smooth.nii', ii);
+    input_data_file_patterns{2*ii}   = sprintf('./data_study2/sub-%02d_ses-post_clean_smooth.nii', ii);
 end
 input_design_matrices = {};
 dummy_scans = 0;
-maskFile = '/Users/hedylamarr/Documents/MATLAB/thesis_scripts/output_test/nmark2p2Mask.nii';
+maskFile = './output_test/nmark2p2Mask.nii';
 preproc_type = 1;
 scaleType    = 2;
 algoType     = 'moo-icar';

@@ -6,7 +6,7 @@
 %  (4) raw-unit bounds reported alongside standardised (Lakens: raw preferred)
 %  (5) leave-one-out influence
 clear; clc;
-ROOT='/Users/hedylamarr/Documents/MATLAB/thesis_scripts';
+ROOT='.';
 PP=fullfile(ROOT,'output72','nmark72_postprocess_results');
 n=72; nDep=51; ECN=91:93; DMN=94:101; A=0.05;
 

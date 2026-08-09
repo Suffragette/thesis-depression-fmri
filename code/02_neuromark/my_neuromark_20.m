@@ -14,7 +14,7 @@ modalityType = 'fMRI';
 TR = 2.5;
 
 % Output
-outputDir = '/Users/hedylamarr/Documents/MATLAB/thesis_scripts/output20';
+outputDir = './output20';
 prefix    = 'nmark20';
 
 % Data selection method (1/2/3/4). This template uses Method 4.
@@ -23,26 +23,26 @@ dataSelectionMethod = 4;
 % Method 4: list subject files (rows = subjects, cols = sessions)
 % Example: 2 subjects, 1 session
 input_data_file_patterns = {
-    '/Users/hedylamarr/Documents/MATLAB/thesis_scripts/data20/sub-01_clean_smooth.nii'
-    '/Users/hedylamarr/Documents/MATLAB/thesis_scripts/data20/sub-02_clean_smooth.nii'
-    '/Users/hedylamarr/Documents/MATLAB/thesis_scripts/data20/sub-03_clean_smooth.nii'
-    '/Users/hedylamarr/Documents/MATLAB/thesis_scripts/data20/sub-04_clean_smooth.nii'
-    '/Users/hedylamarr/Documents/MATLAB/thesis_scripts/data20/sub-05_clean_smooth.nii'
-    '/Users/hedylamarr/Documents/MATLAB/thesis_scripts/data20/sub-06_clean_smooth.nii'
-    '/Users/hedylamarr/Documents/MATLAB/thesis_scripts/data20/sub-07_clean_smooth.nii'
-    '/Users/hedylamarr/Documents/MATLAB/thesis_scripts/data20/sub-08_clean_smooth.nii'
-    '/Users/hedylamarr/Documents/MATLAB/thesis_scripts/data20/sub-09_clean_smooth.nii'
-    '/Users/hedylamarr/Documents/MATLAB/thesis_scripts/data20/sub-10_clean_smooth.nii'
-    '/Users/hedylamarr/Documents/MATLAB/thesis_scripts/data20/sub-52_clean_smooth.nii'
-    '/Users/hedylamarr/Documents/MATLAB/thesis_scripts/data20/sub-53_clean_smooth.nii'
-    '/Users/hedylamarr/Documents/MATLAB/thesis_scripts/data20/sub-54_clean_smooth.nii'
-    '/Users/hedylamarr/Documents/MATLAB/thesis_scripts/data20/sub-55_clean_smooth.nii'
-    '/Users/hedylamarr/Documents/MATLAB/thesis_scripts/data20/sub-56_clean_smooth.nii'
-    '/Users/hedylamarr/Documents/MATLAB/thesis_scripts/data20/sub-57_clean_smooth.nii'
-    '/Users/hedylamarr/Documents/MATLAB/thesis_scripts/data20/sub-58_clean_smooth.nii'
-    '/Users/hedylamarr/Documents/MATLAB/thesis_scripts/data20/sub-59_clean_smooth.nii'
-    '/Users/hedylamarr/Documents/MATLAB/thesis_scripts/data20/sub-60_clean_smooth.nii'
-    '/Users/hedylamarr/Documents/MATLAB/thesis_scripts/data20/sub-61_clean_smooth.nii'
+    './data20/sub-01_clean_smooth.nii'
+    './data20/sub-02_clean_smooth.nii'
+    './data20/sub-03_clean_smooth.nii'
+    './data20/sub-04_clean_smooth.nii'
+    './data20/sub-05_clean_smooth.nii'
+    './data20/sub-06_clean_smooth.nii'
+    './data20/sub-07_clean_smooth.nii'
+    './data20/sub-08_clean_smooth.nii'
+    './data20/sub-09_clean_smooth.nii'
+    './data20/sub-10_clean_smooth.nii'
+    './data20/sub-52_clean_smooth.nii'
+    './data20/sub-53_clean_smooth.nii'
+    './data20/sub-54_clean_smooth.nii'
+    './data20/sub-55_clean_smooth.nii'
+    './data20/sub-56_clean_smooth.nii'
+    './data20/sub-57_clean_smooth.nii'
+    './data20/sub-58_clean_smooth.nii'
+    './data20/sub-59_clean_smooth.nii'
+    './data20/sub-60_clean_smooth.nii'
+    './data20/sub-61_clean_smooth.nii'
 };
 
 % Optional: per-subject design matrices (only used for certain keyword_designMatrix settings)
@@ -53,7 +53,7 @@ input_design_matrices = {};
 dummy_scans = 0;
 
 % Mask: [] for default, or full path, or special strings (if your lab uses them)
-maskFile = '/Users/hedylamarr/Documents/MATLAB/thesis_scripts/output_test/nmark2p2Mask.nii';  % or [] / 'C:\path\mask.nii'
+maskFile = './output_test/nmark2p2Mask.nii';  % or [] / 'C:\path\mask.nii'
 
 % Preprocessing:
 % 1 Remove mean per time point

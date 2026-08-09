@@ -5,7 +5,7 @@
 %   Study 2: random sign-flip per subject (paired)
 % Output: inflation factor = empirical SD / binomial SD.
 clear; clc; rng(42,'twister');
-ROOT='/Users/hedylamarr/Documents/MATLAB/thesis_scripts';
+ROOT='.';
 DMN=94:101; ECN=91:93; NP=10000; A=0.05;
 [di,dj]=find(triu(true(numel(DMN)),1)); wP=[DMN(di)' DMN(dj)'];
 [ei,ej]=ndgrid(DMN,ECN); eP=[ei(:) ej(:)];

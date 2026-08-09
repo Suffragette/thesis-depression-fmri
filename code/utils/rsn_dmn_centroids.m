@@ -1,5 +1,5 @@
 clear; clc;
-i=niftiinfo('/Users/hedylamarr/Downloads/rsn20.nii');
+i=niftiinfo('./rsn20.nii');
 v=niftiread(i); A=i.Transform.T'; d=i.ImageSize(1:3);
 [gx,gy,gz]=ndgrid(0:d(1)-1,0:d(2)-1,0:d(3)-1);
 mni=A*[gx(:)';gy(:)';gz(:)';ones(1,numel(gx))];

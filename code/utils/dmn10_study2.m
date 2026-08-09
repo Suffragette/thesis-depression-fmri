@@ -9,7 +9,7 @@
 %   POSTERIOR 43,44,46,48,49 | ANTERIOR 45(mPFC +35),47(vACC +15)
 %   CC (cognitive control, ECN proxy) = 26-42
 clear; clc;
-ROOT='/Users/hedylamarr/Documents/MATLAB/thesis_scripts';
+ROOT='.';
 D=dir(fullfile(ROOT,'output_study2_nm10','*postprocess_results','*post_process_sub_*.mat'));
 assert(numel(D)==58, sprintf('Found %d files, expected 58', numel(D)));
 [~,ord]=sort({D.name}); D=D(ord);

@@ -3,7 +3,7 @@
 modalityType = 'fMRI';
 TR = 2.5;
 
-outputDir = '/Users/hedylamarr/Documents/MATLAB/thesis_scripts/output72_v25';
+outputDir = './output72_v25';
 prefix    = 'nmark72v25';
 
 dataSelectionMethod = 4;
@@ -12,13 +12,13 @@ dataSelectionMethod = 4;
 input_data_file_patterns = cell(72,1);
 for ii = 1:72
     input_data_file_patterns{ii} = sprintf( ...
-      '/Users/hedylamarr/Documents/MATLAB/thesis_scripts/data72_v25/sub-%02d_clean_smooth.nii', ii);
+      './data72_v25/sub-%02d_clean_smooth.nii', ii);
 end
 
 input_design_matrices = {};
 dummy_scans = 0;
 
-maskFile = '/Users/hedylamarr/Documents/MATLAB/thesis_scripts/output_test/nmark2p2Mask.nii';
+maskFile = './output_test/nmark2p2Mask.nii';
 
 preproc_type = 1;
 scaleType    = 2;

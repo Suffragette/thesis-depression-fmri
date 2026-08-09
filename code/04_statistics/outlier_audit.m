@@ -3,7 +3,7 @@
 % outliers, (c) whether removing extreme subjects changes conclusions,
 % (d) whether any subject's FNC is degenerate (flat / NaN-heavy).
 clear; clc;
-ROOT='/Users/hedylamarr/Documents/MATLAB/thesis_scripts';
+ROOT='.';
 DMN=94:101; ECN=91:93;
 [di,dj]=find(triu(true(numel(DMN)),1)); wP=[DMN(di)' DMN(dj)'];
 [ei,ej]=ndgrid(DMN,ECN); eP=[ei(:) ej(:)];

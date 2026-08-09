@@ -4,9 +4,9 @@
 %         -> trilinear sample. No voxel-wise reindexing.
 % POSITIVE CONTROL: visual RSNs must match NeuroMark visual ICNs (14-25).
 clear; clc;
-ROOT='/Users/hedylamarr/Documents/MATLAB/thesis_scripts';
+ROOT='.';
 NM=fullfile(ROOT,'output_test','rNeuromark_fMRI_2.2_modelorder-multi.nii');
-RS='/Users/hedylamarr/Downloads/PNAS_Smith09_rsn10.nii';
+RS='./PNAS_Smith09_rsn10.nii';
 
 iN=niftiinfo(NM); vN=niftiread(iN); AN=iN.Transform.T'; dN=iN.ImageSize(1:3);
 iR=niftiinfo(RS); vR=single(niftiread(iR)); AR=iR.Transform.T'; dR=iR.ImageSize(1:3);

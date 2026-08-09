@@ -14,7 +14,7 @@
 %  false positives".
 clear; clc;
 
-PP    = '/Users/hedylamarr/Documents/MATLAB/thesis_scripts/output_study2/nmark_s2_postprocess_results';
+PP    = './output_study2/nmark_s2_postprocess_results';
 nSub  = 29;
 ECN   = 91:93; DMN = 94:101; SAL = 102:105;
 ALPHA = 0.05;
@@ -57,7 +57,7 @@ end
 PRE  = sc(1:2:end, :);   % 29 x 6
 POST = sc(2:2:end, :);   % 29 x 6
 DELTA = POST - PRE;      % positive = increase over time
-save('/Users/hedylamarr/Documents/MATLAB/thesis_scripts/study2_delta_domain.mat','PRE','POST','DELTA','labels');
+save('./study2_delta_domain.mat','PRE','POST','DELTA','labels');
 
 %% ---- paired tests per subgroup ----
 groups = {NT,'no-treatment'; CBT,'CBT'; NFB,'neurofeedback'; 1:29,'ALL (pooled)'};

@@ -1,5 +1,5 @@
 clear; clc;
-ROOT='/Users/hedylamarr/Documents/MATLAB/thesis_scripts';
+ROOT='.';
 D=dir(fullfile(ROOT,'output_study2_nm10','*postprocess_results','*post_process_sub_*.mat'));
 [~,ord]=sort({D.name}); D=D(ord);
 Z=nan(58,53,53);
