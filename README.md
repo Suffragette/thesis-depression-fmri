@@ -139,3 +139,11 @@ The full analysis runs in two environments: preprocessing in Python (Neurodesk),
 See the script inventory above for what each script does and which section it supports.
 
 **Note on denoising variant numbering:** the variants are numbered V0 (baseline), V2 (no-aCompCor), V5 (no-bandpass), plus Vpaper (paper-matched). The intermediate numbers (V1, V3, V4) were design placeholders that were not implemented, since these four variants covered all the comparisons needed to isolate each preprocessing factor.
+
+## Setup notes (paths)
+
+The scripts use **relative paths** and two placeholders, so no personal paths are hard-coded:
+
+- **Data root** (`.`): scripts expect to be run **from the repository folder**, with the analysis outputs and inputs in the working directory. Run them after `cd` into the relevant `code/` subfolder, or adjust the `ROOT` variable at the top of each script to point to your local copy.
+- **`<MATLAB_ROOT>`**: replace this with the path to your MATLAB toolboxes (GIFT/NeuroMark and SPM12). For example, on a typical install: `~/Documents/MATLAB`.
+- **Data**: the fMRI datasets are not included (they are large and public). Download them from OpenNeuro (ds002748, ds003007) and point the scripts to your local copy.
