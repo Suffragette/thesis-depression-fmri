@@ -1,0 +1,32 @@
+=========== CHANCE AUDIT: Bezmaternykh et al. 2021 ===========
+Question: do reported findings exceed the false-positive rate
+expected under the null, given NO correction (paper admits none)?
+
+Analysis                               tests  exp_FP   found    ratio
+Study 1: group comparison                 55     2.8       7     2.55
+Study 1: FC-ZSRDS corr (Table 4)           5     0.2       2     8.00
+Study 2: dynamics, 4 groups              312    15.6      17     1.09
+TOTAL                                    372    18.6      26     1.40
+
+--- Binomial test: is the count above chance? ---
+Study 1: group comparison            P(>=7 of 55 | H0) = 0.0193  above chance
+Study 1: FC-ZSRDS corr (Table 4)     P(>=2 of 5 | H0) = 0.0226  above chance
+Study 2: dynamics, 4 groups          P(>=17 of 312 | H0) = 0.3934  INDISTINGUISHABLE from chance
+TOTAL                                P(>=26 of 372 | H0) = 0.0557
+
+--- Bonferroni threshold the paper would have needed ---
+Study 2: a/312 = 0.00016. Paper's smallest dynamic p = 0.002 (7-11). Survives? NO
+Study 1: a/55  = 0.00091. Paper's smallest p = 0.004 (9-16).       Survives? NO
+
+The key pair 10-12 (p=0.044) is one of 312 tests.
+Expected number of tests with p<=0.044 under H0: 13.7
+
+--- Study 2: consistency of numerator vs denominator ---
+CBT,NFB are SUBSETS of TR (overlapping subjects).
+scheme                               num   den P(>=num)
+(i) all 4 groups                      17   312   0.3934
+(ii) disjoint NT+TR                   10   156   0.2551
+(iii) INCONSISTENT: 17 over 156       17   156   0.0022
+Only the INCONSISTENT scheme (double-counts overlap) reaches p<.05.
+Every consistent count -> chance. binomial assumes independence,
+so ~1.3x dependence inflation (see perm_null.m) makes p even LARGER.
