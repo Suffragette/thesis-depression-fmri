@@ -11,7 +11,7 @@ This repository contains the analysis code for a reanalysis of:
 
 > Bezmaternykh, D. D., et al. (2021). Brain networks connectivity in mild to moderate depression: Resting state fMRI study with implications to nonpharmacological treatment. *Neural Plasticity*, 2021, 8846097.
 
-The study examines whether the principal functional-connectivity conclusions reported by Bezmaternykh et al. remain supported when the same openly available data are analysed under alternative analysis specifications. Here "reproducibility" is used in this restricted sense — re-examination of the same data under different, explicitly documented analytical choices — not as independent-sample replication.
+The study examines whether the principal functional-connectivity conclusions reported by Bezmaternykh et al. remain supported when the same openly available data are analysed under alternative analysis specifications. Here "reproducibility" is used in this restricted sense (re-examination of the same data under different, explicitly documented analytical choices), not as independent-sample replication.
 
 This is not a direct replication of the original workflow. Beyond a primary analysis, the project includes multiple targeted sensitivity and additional analyses: denoising variants, NeuroMark versus data-driven ICA, spatial matching, zero-lag versus lag-shift connectivity estimation, the Network-Based Statistic (NBS), equivalence (TOST) analyses, finding-by-finding comparisons, and Study 2 longitudinal analyses. These examine the influence of selected analytical choices where possible; they do not constitute a full multiverse analysis and do not isolate the causal effect of any individual choice.
 
@@ -91,7 +91,7 @@ Raw data are not stored here (large, already public). Available from OpenNeuro:
 
 | Script | What it does | Thesis |
 |---|---|---|
-| run_cnbs_H1_triple.m | Confirmatory, prespecified triple-network NBS — standard NBS (Zalesky 2010), FWER | 3.1 |
+| run_cnbs_H1_triple.m | Confirmatory, prespecified triple-network NBS: standard NBS (Zalesky 2010), FWER | 3.1 |
 | run_nbs_72.m, run_nbs.m | Supporting / pilot NBS | 3.1 |
 | chance_audit.m | Are the paper's counts above chance? | 3.1 |
 | perm_null.m | Empirical permutation null | 3.1 |
