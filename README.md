@@ -1,17 +1,25 @@
-# Reproducibility Reanalysis of Bezmaternykh et al. (2021)
+# A reanalysis of "Brain Networks Connectivity in Mild to Moderate Depression" (Bezmaternykh et al., 2021): reproducibility of resting-state functional connectivity findings using fMRIPrep and NeuroMark
 
-Brain-network connectivity in mild-to-moderate depression — a reproducibility reanalysis using **fMRIPrep** and **NeuroMark**, in place of the original SPM12 + GIFT-ICA pipeline.
+MSc thesis reanalysing the openly available resting-state fMRI datasets ds002748 and ds003007 associated with Bezmaternykh et al. (2021), using alternative, explicitly documented analysis specifications.
 
 MSc thesis, Department of Computer Engineering and Informatics, University of Patras.
 Author: Christina Kouimountzi. Supervisor: Konstantinos Tsichlas.
 
 ## Overview
 
-This repository contains the analysis code for a reproducibility reanalysis of:
+This repository contains the analysis code for a reanalysis of:
 
 > Bezmaternykh, D. D., et al. (2021). Brain networks connectivity in mild to moderate depression: Resting state fMRI study with implications to nonpharmacological treatment. *Neural Plasticity*, 2021, 8846097.
 
-Using the same openly available data but a modern, standardised pipeline and a family-wise-error-controlled statistical test, the study re-examines whether the original within-DMN and DMN-ECN connectivity findings reproduce. **They do not reproduce** at the reported magnitude or stability, and the non-reproduction cannot be attributed to any single methodological choice.
+The study examines whether the principal functional-connectivity conclusions reported by Bezmaternykh et al. remain supported when the same openly available data are analysed under alternative analysis specifications. Here "reproducibility" is used in this restricted sense — re-examination of the same data under different, explicitly documented analytical choices — not as independent-sample replication.
+
+This is not a direct replication of the original workflow. Beyond a primary analysis, the project includes multiple targeted sensitivity and additional analyses: denoising variants, NeuroMark versus data-driven ICA, spatial matching, zero-lag versus lag-shift connectivity estimation, the Network-Based Statistic (NBS), equivalence (TOST) analyses, finding-by-finding comparisons, and Study 2 longitudinal analyses. These examine the influence of selected analytical choices where possible; they do not constitute a full multiverse analysis and do not isolate the causal effect of any individual choice.
+
+## Scope and interpretation
+
+- **Reanalysis, not replication.** The same openly available datasets are re-used; this is not an independent sample.
+- **Prespecified, not preregistered.** The primary analysis was prespecified; it was not formally preregistered with a public timestamp.
+- **Study 1 / Study 2 convergence.** A participant/scan-overlap audit (documented in `Appendix_Participant_Scan_Overlap.md` and `appendix_participant_overlap.csv`) indicates substantial overlap between the two datasets. This limits the interpretation of any cross-study convergence as *independent* evidence; it is not, in itself, a claim about the validity of the original study.
 
 ## Pipeline
 
@@ -66,7 +74,7 @@ Raw data are not stored here (large, already public). Available from OpenNeuro:
 | my_neuromark_72.m | NeuroMark 2.2 baseline, 72 subjects (main) |
 | my_neuromark_72_v25.m | NeuroMark v2.5 template (sensitivity) |
 | my_neuromark_V2.m, my_neuromark_Vpaper.m | NeuroMark on V2 / Vpaper denoising |
-| my_dataica_20.m | Data-driven ICA replicating the original (Infomax+ICASSO, 20 comp) |
+| my_dataica_20.m | Data-driven ICA following the original study's approach (Infomax+ICASSO, 20 comp) |
 | check_graymatter.m | Gray-matter component filtering (paper method) |
 | match_to_neuromark.m, match_v2.m, match_v3.m | Spatial matching of ICs to templates |
 | my_neuromark_study2.m, my_neuromark10_study2.m | NeuroMark 2.2 / 1.0 for Study 2 |
@@ -83,14 +91,14 @@ Raw data are not stored here (large, already public). Available from OpenNeuro:
 
 | Script | What it does | Thesis |
 |---|---|---|
-| run_cnbs_H1_triple.m | Confirmatory triple-network NBS (FWER) | 3.1 |
+| run_cnbs_H1_triple.m | Confirmatory, prespecified triple-network NBS — standard NBS (Zalesky 2010), FWER | 3.1 |
 | run_nbs_72.m, run_nbs.m | Supporting / pilot NBS | 3.1 |
 | chance_audit.m | Are the paper's counts above chance? | 3.1 |
 | perm_null.m | Empirical permutation null | 3.1 |
 | check_domains.m | Domain-level comparison (granularity) | 3.1 |
 | check_uncorrected.m | Uncorrected diagnostic | 3.1 |
-| a3_direction.m | Sign stability across 4 pipelines | 3.2 |
-| direction_audit.m | Does sign agreement exceed 50%? | 3.2 |
+| a3_direction.m | Direction of the effect across 4 pipelines | 3.2 |
+| direction_audit.m | Whether sign agreement across pipelines exceeds 50% | 3.2 |
 | table3_full.m, table3_full_v25.m | Finding-by-finding, paper Table 3 | 3.6 |
 | clinical_corr.m | Biomarker claim (paper Tables 7-10) | 3.7 |
 | outlier_audit.m | Leave-one-out robustness | 3.9 |
@@ -104,6 +112,8 @@ Raw data are not stored here (large, already public). Available from OpenNeuro:
 | tost_study2.m | Equivalence testing, Study 2 | 3.8 |
 
 (Intermediate TOST versions - tost_study1*.m, tost_perpair.m - are kept for transparency of the analysis history.)
+
+**Terminology note:** the confirmatory analysis uses the *standard* Network-Based Statistic (Zalesky et al., 2010). The "cnbs" in `run_cnbs_H1_triple.m` denotes "confirmatory NBS" (prespecified) and does **not** refer to constrained NBS (cNBS), which is a different method.
 
 ### Utils (MATLAB + Python)
 
@@ -138,7 +148,7 @@ The full analysis runs in two environments: preprocessing in Python (Neurodesk),
 
 See the script inventory above for what each script does and which section it supports.
 
-**Note on denoising variant numbering:** the variants are numbered V0 (baseline), V2 (no-aCompCor), V5 (no-bandpass), plus Vpaper (paper-matched). The intermediate numbers (V1, V3, V4) were design placeholders that were not implemented, since these four variants covered all the comparisons needed to isolate each preprocessing factor.
+**Note on denoising variant numbering:** the variants are numbered V0 (baseline), V2 (no-aCompCor), V5 (no-bandpass), plus Vpaper (paper-matched). The intermediate numbers (V1, V3, V4) were design placeholders that were not implemented, since these four variants covered the preprocessing comparisons of interest.
 
 ## Setup notes (paths)
 
