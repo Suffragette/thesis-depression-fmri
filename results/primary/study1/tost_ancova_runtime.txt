@@ -1,0 +1,37 @@
+diary on
+run('tost_ancova.m')
+[Warning: Column headers from the file were modified to make them valid MATLAB identifiers before creating
+variable names for the table. The original column headers are saved in the VariableDescriptions property.
+Set 'VariableNamingRule' to 'preserve' to use the original column headers as table variable names.] 
+========== A. COVARIATE BALANCE (never checked before) ==========
+age : dep 32.8+-8.9  con 33.8+-8.5  t(70)=-0.45 p=0.654
+FD  : dep 0.0825+-0.0390 con 0.0852+-0.0318 t(70)=-0.28 p=0.781
+sex : dep 13m/38f  con 6m/15f  chi2(1)=0.07 p=0.787
+>> Covariates balanced; adjustment expected to change little.
+
+========== B. ANCOVA-based TOST ==========
+model: y ~ 1 + group + age + sex + FD | df = 72 - 5 = 67
+
+--- within-DMN ---
+ adjusted diff (raw) = +0.00719  SE=0.01575  t(67)=+0.456 p=0.6496
+ 95%CI raw [-0.02425, +0.03863]
+ d (resid SD 0.0606) = +0.119 | d (pooled SD 0.0616) = +0.117
+ TOST[residual SD]: smallest rejectable |d| = 0.60 (raw bound +0.03636)
+   paper d=0.606 -> raw +0.03673, p_TOST=0.0325 EXCLUDED
+   paper d=0.671 -> raw +0.04067, p_TOST=0.0186 EXCLUDED
+ TOST[pooled   SD]: smallest rejectable |d| = 0.55 (raw bound +0.03390)
+   paper d=0.606 -> raw +0.03735, p_TOST=0.0299 EXCLUDED
+   paper d=0.671 -> raw +0.04136, p_TOST=0.0168 EXCLUDED
+
+--- DMN-ECN ---
+ adjusted diff (raw) = +0.00809  SE=0.01790  t(67)=+0.452 p=0.6528
+ 95%CI raw [-0.02764, +0.04382]
+ d (resid SD 0.0689) = +0.117 | d (pooled SD 0.0696) = +0.116
+ TOST[residual SD]: smallest rejectable |d| = 0.60 (raw bound +0.04133)
+   paper d=0.606 -> raw +0.04174, p_TOST=0.0322 EXCLUDED
+   paper d=0.671 -> raw +0.04622, p_TOST=0.0184 EXCLUDED
+ TOST[pooled   SD]: smallest rejectable |d| = 0.55 (raw bound +0.03828)
+   paper d=0.606 -> raw +0.04218, p_TOST=0.0306 EXCLUDED
+   paper d=0.671 -> raw +0.04671, p_TOST=0.0173 EXCLUDED
+
+diary off

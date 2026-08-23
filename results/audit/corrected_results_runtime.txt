@@ -1,0 +1,325 @@
+diary on
+
+fprintf('\n\n===== RUN: tost_ancova =====\n');
+
+
+===== RUN: tost_ancova =====
+run('tost_ancova.m');
+[Warning: Column headers from the file were modified to make them valid MATLAB identifiers before creating
+variable names for the table. The original column headers are saved in the VariableDescriptions property.
+Set 'VariableNamingRule' to 'preserve' to use the original column headers as table variable names.] 
+========== A. COVARIATE BALANCE (never checked before) ==========
+age : dep 32.8+-8.9  con 33.8+-8.5  t(70)=-0.45 p=0.654
+FD  : dep 0.0825+-0.0390 con 0.0852+-0.0318 t(70)=-0.28 p=0.781
+sex : dep 13m/38f  con 6m/15f  chi2(1)=0.07 p=0.787
+>> Covariates balanced; adjustment expected to change little.
+
+========== B. ANCOVA-based TOST ==========
+model: y ~ 1 + group + age + sex + FD | df = 72 - 5 = 67
+
+--- within-DMN ---
+ adjusted diff (raw) = +0.00719  SE=0.01575  t(67)=+0.456 p=0.6496
+ 95%CI raw [-0.02425, +0.03863]
+ d (resid SD 0.0606) = +0.119 | d (pooled SD 0.0616) = +0.117
+ TOST[residual SD]: smallest rejectable |d| = 0.60 (raw bound +0.03636)
+   paper d=0.606 -> raw +0.03673, p_TOST=0.0325 EXCLUDED
+   paper d=0.671 -> raw +0.04067, p_TOST=0.0186 EXCLUDED
+ TOST[pooled   SD]: smallest rejectable |d| = 0.55 (raw bound +0.03390)
+   paper d=0.606 -> raw +0.03735, p_TOST=0.0299 EXCLUDED
+   paper d=0.671 -> raw +0.04136, p_TOST=0.0168 EXCLUDED
+
+--- DMN-ECN ---
+ adjusted diff (raw) = +0.00809  SE=0.01790  t(67)=+0.452 p=0.6528
+ 95%CI raw [-0.02764, +0.04382]
+ d (resid SD 0.0689) = +0.117 | d (pooled SD 0.0696) = +0.116
+ TOST[residual SD]: smallest rejectable |d| = 0.60 (raw bound +0.04133)
+   paper d=0.606 -> raw +0.04174, p_TOST=0.0322 EXCLUDED
+   paper d=0.671 -> raw +0.04622, p_TOST=0.0184 EXCLUDED
+ TOST[pooled   SD]: smallest rejectable |d| = 0.55 (raw bound +0.03828)
+   paper d=0.606 -> raw +0.04218, p_TOST=0.0306 EXCLUDED
+   paper d=0.671 -> raw +0.04671, p_TOST=0.0173 EXCLUDED
+
+
+fprintf('\n\n===== RUN: tost_peredge =====\n');
+
+
+===== RUN: tost_peredge =====
+run('tost_peredge.m');
+[Warning: Column headers from the file were modified to make them valid MATLAB identifiers before creating
+variable names for the table. The original column headers are saved in the VariableDescriptions property.
+Set 'VariableNamingRule' to 'preserve' to use the original column headers as table variable names.] 
+Loaded. edges: 28 within-DMN + 24 DMN-ECN
+
+======= STUDY 1: per-edge TOST (between-group, n=51/21) =======
+SESOI d=0.606 : edges excluded 20/52 (38%) | sig (uncorr) 1
+   observed |d| per edge: median 0.20  max 0.54
+SESOI d=0.671 : edges excluded 33/52 (63%) | sig (uncorr) 1
+   observed |d| per edge: median 0.20  max 0.54
+
+======= STUDY 2 NT: per-edge TOST (paired, n=15) =======
+SESOI dz=0.571 : edges excluded 10/28 | sig (uncorr) 1
+   observed |dz| per edge: median 0.15  max 0.86
+
+======= SCALE CHECK vs paper =======
+paper 10-12: pre .45+-.15  post .31+-.18  -> raw change -0.140
+our within-DMN edges: |raw change| median 0.033 max 0.144
+our per-edge SD of change: median 0.216 (paper implies ~0.17)
+our SD of the 28-edge MEAN: 0.068  <-- the wrong denominator
+dilution factor: 3.2x
+
+=> A single-edge change of 0.140 appears as 0.0050 in the 28-edge mean.
+
+fprintf('\n\n===== RUN: tost_peredge_v25 =====\n');
+
+
+===== RUN: tost_peredge_v25 =====
+run('tost_peredge_v25.m');
+[Warning: Column headers from the file were modified to make them valid MATLAB identifiers before creating
+variable names for the table. The original column headers are saved in the VariableDescriptions property.
+Set 'VariableNamingRule' to 'preserve' to use the original column headers as table variable names.] 
+Loaded. edges: 28 within-DMN + 24 DMN-ECN
+
+======= STUDY 1: per-edge TOST (between-group, n=51/21) =======
+SESOI d=0.606 : edges excluded 23/52 (44%) | sig (uncorr) 5
+   observed |d| per edge: median 0.22  max 0.83
+SESOI d=0.671 : edges excluded 28/52 (54%) | sig (uncorr) 5
+   observed |d| per edge: median 0.22  max 0.83
+
+======= STUDY 2 NT: per-edge TOST (paired, n=15) =======
+SESOI dz=0.571 : edges excluded 10/28 | sig (uncorr) 1
+   observed |dz| per edge: median 0.15  max 0.86
+
+======= SCALE CHECK vs paper =======
+paper 10-12: pre .45+-.15  post .31+-.18  -> raw change -0.140
+our within-DMN edges: |raw change| median 0.033 max 0.144
+our per-edge SD of change: median 0.216 (paper implies ~0.17)
+our SD of the 28-edge MEAN: 0.068  <-- the wrong denominator
+dilution factor: 3.2x
+
+=> A single-edge change of 0.140 appears as 0.0050 in the 28-edge mean.
+
+===== v25 DIRECTION CHECK (depr vs HC) =====
+within-DMN: depr=+0.0527  HC=+0.0603  -> HC>depr  p=0.603
+DMN-ECN   : depr=+0.0127  HC=+0.0049  -> depr>HC  p=0.475
+Compare to 2.2 (run tost_peredge.m): within-DMN was depr>HC there.
+If direction differs across pipelines -> SIGN INSTABILITY (both n.s.).
+
+fprintf('\n\n===== RUN: perm_null =====\n');
+
+
+===== RUN: perm_null =====
+run('perm_null.m');
+Edges in triple-network set: 52
+Loaded. S1 72x52, S2 29x52
+
+========= EMPIRICAL NULL (10000 permutations) =========
+study             exp emp_mean   emp_SD binom_SD  inflation
+Study 1          2.60     2.62     2.04     1.57       1.30x
+Study 2          2.60     2.63     1.98     1.57       1.26x
+
+95th percentile of null count: S1=6  S2=6
+
+===== EMPIRICAL p (native 52-edge triple-network set) =====
+study       found    exp      p_emp
+Study 1         1   2.60     0.8737
+Study 2         3   2.60     0.4563
+
+NOTE: null AND observed both over the SAME 52 triple-network edges.
+
+===== APPROX p for PAPER counts (normcdf, diff 55/312-edge space; see corr #2) =====
+analysis          tests  found      exp    p_binom  p_corrected
+S1 group comp        55      7     2.75     0.0193       0.0369
+S2 dynamics         312     17    15.60     0.3934       0.4263
+
+NOTE: inflation estimated from OUR dependence structure (52 edges),
+applied to the paper's counts. Approximate but principled.
+
+fprintf('\n\n===== RUN: overlap_audit =====\n');
+
+
+===== RUN: overlap_audit =====
+run('overlap_audit.m');
+====== A. NeuroMark 1.0: pair-set overlap ======
+set                         pairs
+postDMN-within                 10
+postDMN-within STRICT           6
+postDMN-CC                     85
+postDMN-CC STRICT              68
+
+Jaccard overlap (1 = identical):
+                                 1       2       3       4
+postDMN-within                1.00    0.60    0.00    0.00
+postDMN-within STRICT         0.60    1.00    0.00    0.00
+postDMN-CC                    0.00    0.00    1.00    0.80
+postDMN-CC STRICT             0.00    0.00    0.80    1.00
+
+-> STRICT sets are SUBSETS: 6 of 6 within-pairs, 68 of 68 CC-pairs
+
+====== B. NeuroMark 2.2 primary: shared networks ======
+within-DMN pairs=28, DMN-ECN pairs=24, shared pairs=0
+BUT both are built from the SAME 8 DMN networks (94-101).
+
+====== C. v25: identical pairs, identical subjects ======
+Same 28 within-DMN + 24 DMN-ECN pairs. Same 72 scans.
+Only difference: fMRIPrep version. Jaccard = 1.00 by construction.
+
+====== D. Subject overlap between studies ======
+Paper: "Subsamples were derived from the major sample of 51 patients".
+-> Study 2 (n=29) subset of Study 1 depressed (n=51): 57% overlap
+-> Study 2 PRE scans ARE the Study 1 scans for those patients.
+
+====== VERDICT ======
+13 comparisons != 13 independent tests.
+ - 4 nm1.0 rows: nested subsets of one claim (10-12)
+ - 2 v25 rows: identical pairs+subjects, re-run of 2 claims
+ - 7 primary: partially dependent (shared networks, shared subjects)
+=> Report 3/7 with caveats. Do NOT report 8/13.
+
+fprintf('\n\n===== RUN: match_v3 =====\n');
+
+
+===== RUN: match_v3 =====
+run('match_v3.m');
+Loading resliced NeuroMark (105, already in DD space)...
+[Warning: spm_existfile is not compiled for your platform.] 
+[> In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('icatb_spm_existfile', '<path>', 23)" style="font-weight:bold">icatb_spm_existfile</a> (<a href="matlab: opentoline('<path>',23,0)">line 23</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('icatb_spm_vol>icatb_spm_vol_hdr', '<path>', 79)" style="font-weight:bold">icatb_spm_vol>icatb_spm_vol_hdr</a> (<a href="matlab: opentoline('<path>',79,0)">line 79</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('icatb_spm_vol', '<path>', 61)" style="font-weight:bold">icatb_spm_vol</a> (<a href="matlab: opentoline('<path>',61,0)">line 61</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('match_v3', './match_v3.m', 15)" style="font-weight:bold">match_v3</a> (<a href="matlab: opentoline('./match_v3.m',15,0)">line 15</a>)
+In <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('run', '/Applications/MATLAB_R2026a.app/toolbox/matlab/lang/run.m', 100)" style="font-weight:bold">run</a> (<a href="matlab: opentoline('/Applications/MATLAB_R2026a.app/toolbox/matlab/lang/run.m',100,0)">line 100</a>)] 
+Loading data-driven ICs (20)...
+Computing PROPER spatial match...
+(z-score both, compare at template-core voxels, Spearman)
+
+============ IC -> NEUROMARK (v3, proper) ============
+dd-IC  best     r        top-3
+IC01   CB       0.012 <-- weak   CB#13(0.01), CB#5(0.01), DMN#94(0.01)
+IC02   PL       0.011 <-- weak   PL#29(0.01), CB#1(0.01), CB#6(0.01)
+IC03   VI-OT    0.012 <-- weak   VI-OT#14(0.01), CB#8(0.01), HC-TP#80(0.01)
+IC04   SM       0.011 <-- weak   SM#57(0.01), HC-TP#76(0.01), ECN#92(0.01)
+IC05   VI-OC    0.011 <-- weak   VI-OC#23(0.01), SC-BG#49(0.01), VI-OT#15(0.01)
+IC06   CB       0.011 <-- weak   CB#13(0.01), SC-BG#49(0.01), CB#2(0.01)
+IC07   HC-FR    0.012 <-- weak   HC-FR#86(0.01), CB#5(0.01), DMN#99(0.01)
+IC08   HC-FR    0.008 <-- weak   HC-FR#83(0.01), SC-EH#37(0.01), HC-FR#81(0.01)
+IC09   CB       0.011 <-- weak   CB#4(0.01), DMN#97(0.01), HC-TP#80(0.01)
+IC10   CB       0.011 <-- weak   CB#10(0.01), SC-ET#41(0.01), SM#57(0.01)
+IC11   PL       0.009 <-- weak   PL#34(0.01), HC-TP#77(0.01), HC-TP#79(0.01)
+IC12   SM       0.010 <-- weak   SM#61(0.01), CB#5(0.01), HC-IT#72(0.01)
+IC13   PL       0.010 <-- weak   PL#28(0.01), ECN#92(0.01), HC-TP#79(0.01)
+IC14   CB       0.010 <-- weak   CB#13(0.01), DMN#95(0.01), DMN#97(0.01)
+IC15   PL       0.011 <-- weak   PL#27(0.01), SAL#102(0.01), PL#26(0.01)
+IC16   SAL      0.015 <-- weak   SAL#104(0.01), HC-FR#89(0.01), PL#32(0.01)
+IC17   DMN      0.007 <-- weak   DMN#99(0.01), SC-BG#49(0.01), DMN#101(0.01)
+IC18   SM       0.010 <-- weak   SM#59(0.01), SC-ET#44(0.01), HC-TP#80(0.01)
+IC19   SM       0.009 <-- weak   SM#67(0.01), SM#63(0.01), HC-FR#90(0.01)
+IC20   VI-OC    0.012 <-- weak   VI-OC#23(0.01), HC-TP#77(0.01), VI-OC#20(0.01)
+
+=== KEY: our identified networks - are they right? ===
+IC01: I said SAL | best-match CB (r=0.01) <-- MISMATCH!
+IC06: I said DMN | best-match CB (r=0.01) <-- MISMATCH!
+IC09: I said SAL | best-match CB (r=0.01) <-- MISMATCH!
+IC12: I said ECN | best-match SM (r=0.01) <-- MISMATCH!
+IC14: I said ECN | best-match CB (r=0.01) <-- MISMATCH!
+IC18: I said ECN | best-match SM (r=0.01) <-- MISMATCH!
+
+fprintf('\n\n===== RUN: spatial_corr =====\n');
+
+
+===== RUN: spatial_corr =====
+run('spatial_corr.m');
+NeuroMark [97 115 97] (105 comps) | Smith [91 109 91] (10 comps)
+voxels inside Smith FOV: 874800 / 1082035 (80.8%)
+correlation mask: 738720 voxels
+
+===== Best NeuroMark match for each Smith RSN =====
+(POSITIVE CONTROL: visual RSNs must hit VI-OT/VI-OC)
+RSN                            best                          2nd
+1              ICN18(VI-OT) r=+0.69         ICN23(VI-OC) r=+0.51
+2              ICN25(VI-OC) r=+0.67         ICN23(VI-OC) r=+0.43
+3              ICN20(VI-OC) r=+0.71         ICN19(VI-OT) r=+0.44
+4              ICN98(TN-DM) r=+0.61         ICN96(TN-DM) r=+0.60
+5                  ICN9(CB) r=+0.45             ICN7(CB) r=+0.42
+6                 ICN56(SM) r=+0.29            ICN61(SM) r=+0.29
+7              ICN75(HC-IT) r=+0.45         ICN71(HC-IT) r=+0.34
+8             ICN104(TN-SA) r=+0.50        ICN103(TN-SA) r=+0.47
+9              ICN91(TN-CE) r=+0.47         ICN94(TN-DM) r=+0.38
+10             ICN84(HC-FR) r=+0.53         ICN92(TN-CE) r=+0.50
+
+===== TN-DM (94-101) vs every Smith RSN =====
+ICN           1      2      3      4      5      6      7      8      9     10
+DMN94     -0.05  +0.01  -0.07  +0.24  -0.02  -0.05  -0.09  -0.03  +0.38  -0.06
+DMN95     -0.02  -0.01  -0.02  +0.30  +0.04  -0.02  -0.09  -0.07  -0.02  +0.37
+DMN96     +0.06  +0.02  -0.06  +0.60  +0.01  -0.04  -0.05  +0.02  -0.08  -0.01
+DMN97     +0.05  +0.02  -0.05  +0.37  +0.04  -0.06  +0.01  -0.02  -0.12  -0.08
+DMN98     +0.09  +0.00  -0.05  +0.61  -0.08  +0.14  -0.12  +0.11  +0.05  +0.16
+DMN99     +0.03  -0.02  +0.00  +0.09  -0.02  +0.03  -0.08  +0.04  -0.07  -0.04
+DMN100    -0.06  -0.01  -0.01  +0.01  -0.03  -0.01  -0.09  +0.09  +0.05  -0.04
+DMN101    -0.08  +0.00  +0.01  +0.34  +0.04  +0.02  -0.01  +0.31  +0.03  -0.04
+
+===== TN-CE (91-93) vs every Smith RSN =====
+ECN91     +0.00  -0.01  -0.06  +0.01  -0.08  -0.05  -0.10  -0.06  +0.47  -0.04
+ECN92     +0.03  -0.04  -0.05  +0.02  -0.02  +0.02  -0.08  -0.10  +0.09  +0.50
+ECN93     +0.02  -0.05  -0.06  +0.19  -0.02  -0.06  -0.03  -0.10  +0.12  +0.41
+
+===== BENCHMARK vs paper (Table 2) =====
+paper: IC1 DMN r=.69 | IC16 DMN r=.57 | IC13 ECN r=.62 | IC11 vDMN r=.48
+our DMN ICNs, best |r| to ANY Smith RSN: 0.38        0.37         0.6        0.37        0.61        0.09        0.09        0.34
+  -> max 0.61, median 0.37
+our ECN ICNs, best |r|: 0.47         0.5        0.41  (max 0.50)
+
+fprintf('\n\n===== RUN: spatial_corr20 =====\n');
+
+
+===== RUN: spatial_corr20 =====
+run('spatial_corr20.m');
+NeuroMark [97 115 97] (105 comps) | Smith [91 109 91] (20 comps)
+voxels inside Smith FOV: 874800 / 1082035 (80.8%)
+correlation mask: 738720 voxels
+
+===== Best NeuroMark match for each Smith RSN =====
+(POSITIVE CONTROL: visual RSNs must hit VI-OT/VI-OC)
+RSN                            best                          2nd
+1              ICN98(TN-DM) r=+0.27         ICN41(SC-ET) r=+0.19
+2                 ICN56(SM) r=+0.29            ICN61(SM) r=+0.29
+3              ICN75(HC-IT) r=+0.45         ICN71(HC-IT) r=+0.34
+4              ICN42(SC-ET) r=+0.45            ICN36(PL) r=+0.35
+5                 ICN12(CB) r=+0.40             ICN9(CB) r=+0.35
+6              ICN18(VI-OT) r=+0.69         ICN23(VI-OC) r=+0.51
+7              ICN98(TN-DM) r=+0.61         ICN96(TN-DM) r=+0.60
+8             ICN104(TN-SA) r=+0.50        ICN103(TN-SA) r=+0.47
+9                  ICN9(CB) r=+0.45             ICN7(CB) r=+0.42
+10             ICN20(VI-OC) r=+0.71         ICN19(VI-OT) r=+0.44
+11            ICN101(TN-DM) r=+0.43        ICN100(TN-DM) r=+0.36
+12             ICN84(HC-FR) r=+0.53         ICN92(TN-CE) r=+0.50
+13             ICN91(TN-CE) r=+0.47         ICN94(TN-DM) r=+0.38
+14             ICN87(HC-FR) r=+0.18            ICN67(SM) r=+0.13
+15             ICN99(TN-DM) r=+0.46         ICN78(HC-TP) r=+0.36
+16             ICN25(VI-OC) r=+0.67         ICN23(VI-OC) r=+0.43
+17             ICN98(TN-DM) r=+0.27         ICN93(TN-CE) r=-0.26
+18             ICN24(VI-OC) r=+0.60         ICN20(VI-OC) r=+0.22
+19                ICN60(SM) r=+0.35            ICN63(SM) r=+0.26
+20             ICN41(SC-ET) r=+0.19         ICN46(SC-BG) r=+0.19
+
+===== TN-DM (94-101) vs every Smith RSN =====
+ICN           1      2      3      4      5      6      7      8      9     10     11     12     13     14     15     16     17     18     19     20
+DMN94     +0.04  -0.05  -0.09  -0.03  -0.01  -0.05  +0.24  -0.03  -0.02  -0.07  +0.06  -0.06  +0.38  +0.05  -0.12  +0.01  +0.22  -0.05  +0.04  -0.07
+DMN95     +0.00  -0.02  -0.09  +0.01  -0.04  -0.02  +0.30  -0.07  +0.04  -0.02  +0.24  +0.37  -0.02  -0.03  -0.07  -0.01  -0.05  +0.01  +0.01  -0.00
+DMN96     +0.11  -0.04  -0.05  +0.08  -0.00  +0.06  +0.60  +0.02  +0.01  -0.06  -0.06  -0.01  -0.08  +0.01  -0.02  +0.02  +0.19  -0.07  -0.02  -0.02
+DMN97     +0.06  -0.06  +0.01  +0.19  +0.01  +0.05  +0.37  -0.02  +0.04  -0.05  -0.03  -0.08  -0.12  -0.05  -0.03  +0.02  +0.21  -0.04  -0.01  -0.07
+DMN98     +0.27  +0.14  -0.12  -0.06  -0.02  +0.09  +0.61  +0.11  -0.08  -0.05  -0.17  +0.16  +0.05  +0.09  +0.18  +0.00  +0.27  +0.00  -0.06  +0.13
+DMN99     +0.05  +0.03  -0.08  -0.02  -0.01  +0.03  +0.09  +0.04  -0.02  +0.00  +0.01  -0.04  -0.07  -0.03  +0.46  -0.02  +0.23  +0.05  +0.07  +0.12
+DMN100    -0.02  -0.01  -0.09  -0.01  -0.01  -0.06  +0.01  +0.09  -0.03  -0.01  +0.36  -0.04  +0.05  -0.01  -0.10  -0.01  -0.08  +0.04  +0.02  -0.05
+DMN101    -0.08  +0.02  -0.01  +0.00  -0.00  -0.08  +0.34  +0.31  +0.04  +0.01  +0.43  -0.04  +0.03  +0.03  -0.12  +0.00  -0.15  +0.09  -0.03  -0.06
+
+===== TN-CE (91-93) vs every Smith RSN =====
+ECN91     +0.05  -0.05  -0.10  -0.07  -0.01  +0.00  +0.01  -0.06  -0.08  -0.06  -0.10  -0.04  +0.47  +0.11  -0.17  -0.01  +0.23  -0.09  +0.03  -0.04
+ECN92     +0.05  +0.02  -0.08  -0.08  -0.03  +0.03  +0.02  -0.10  -0.02  -0.05  +0.05  +0.50  +0.09  +0.08  -0.18  -0.04  -0.18  -0.02  -0.05  -0.03
+ECN93     +0.01  -0.06  -0.03  -0.05  -0.01  +0.02  +0.19  -0.10  -0.02  -0.06  +0.18  +0.41  +0.12  +0.03  -0.10  -0.05  -0.26  +0.01  +0.00  -0.06
+
+===== BENCHMARK vs paper (Table 2) =====
+paper: IC1 DMN r=.69 | IC16 DMN r=.57 | IC13 ECN r=.62 | IC11 vDMN r=.48
+our DMN ICNs, best |r| to ANY Smith RSN: 0.38        0.37         0.6        0.37        0.61        0.46        0.36        0.43
+  -> max 0.61, median 0.41
+our ECN ICNs, best |r|: 0.47         0.5        0.41  (max 0.50)
+
+diary off

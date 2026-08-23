@@ -1,0 +1,13 @@
+result_file	theme	status	contents
+results/primary/study1/study1_results.log	primary group comparison	primary	NBS n=0 (FWER)
+results/primary/study1/tost_ancova_runtime.txt	primary group comparison/equivalence testing	primary	ANCOVA + TOST, covariate balance
+results/primary/study1/results_check_domains.txt	primary group comparison	supporting	6 domain-pair rows (0/6 sig)
+results/primary/study2/tost_study2_exact_runtime.txt	Study 2 dynamics	primary	exact paired TOST (NT/TR/NFB)
+results/primary/study2/study2_final_missing_results.txt	Study 2 dynamics	primary	pre-post + NM1.0 + LOO
+results/sensitivity/edge_level/tost_peredge_runtime.txt	equivalence testing	sensitivity	per-edge TOST (20/52, 33/52)
+results/sensitivity/edge_level/tost_peredge_v25_runtime.txt	equivalence testing	sensitivity	v25 per-edge (23/52, 28/52)
+results/sensitivity/network_definition/results_dataica_group.txt	parcellation sensitivity	sensitivity	data-driven ICA group (1/15 nominal)
+results/qc/perm_null_runtime.txt	primary group comparison	qc	permutation null (inflation 1.30x/1.26x)
+results/audit/key_results.txt	-	audit	consolidated key numbers
+results/audit/corrected_results_runtime.txt	-	audit	combined run (tost/perm/overlap/spatial)
+results/RESULTS_GENEALOGY.md	3	all	verified genealogy of every result

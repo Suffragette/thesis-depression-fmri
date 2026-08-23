@@ -1,0 +1,11 @@
+stage	script	expected_output	status
+statistics	run_cnbs_H1_triple.m	H1_result.mat (NBS)	primary
+statistics	tost_ancova.m	tost_ancova_runtime.txt	primary
+statistics	stats_study2.m	study2 exact TOST + pre-post	primary
+statistics	check_domains.m	results_check_domains.txt	supporting
+statistics	tost_peredge.m	per-edge TOST counts	sensitivity
+fnc	check_dataica_fnc.m	results_dataica_group.txt	sensitivity
+fnc	lagshift_study1.m	lag-shift comparison	sensitivity
+statistics	perm_null.m	perm_null_runtime.txt	qc
+statistics	chance_audit.m	chance baseline	qc
+statistics	repro1012_full.m	repro1012_full.csv	explanatory

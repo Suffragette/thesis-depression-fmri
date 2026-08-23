@@ -1,0 +1,29 @@
+diary on
+
+run('perm_null.m')
+Edges in triple-network set: 52
+Loaded. S1 72x52, S2 29x52
+
+========= EMPIRICAL NULL (10000 permutations) =========
+study             exp emp_mean   emp_SD binom_SD  inflation
+Study 1          2.60     2.62     2.04     1.57       1.30x
+Study 2          2.60     2.63     1.98     1.57       1.26x
+
+95th percentile of null count: S1=6  S2=6
+
+===== EMPIRICAL p (native 52-edge triple-network set) =====
+study       found    exp      p_emp
+Study 1         1   2.60     0.8737
+Study 2         3   2.60     0.4563
+
+NOTE: null AND observed both over the SAME 52 triple-network edges.
+
+===== APPROX p for PAPER counts (normcdf, diff 55/312-edge space; see corr #2) =====
+analysis          tests  found      exp    p_binom  p_corrected
+S1 group comp        55      7     2.75     0.0193       0.0369
+S2 dynamics         312     17    15.60     0.3934       0.4263
+
+NOTE: inflation estimated from OUR dependence structure (52 edges),
+applied to the paper's counts. Approximate but principled.
+
+diary off

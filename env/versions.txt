@@ -1,10 +1,16 @@
-# Καταγραφή ακριβών εκδόσεων (COBIDAS reproducibility)
-fMRIPrep      : 21.0.2 (δημόσια derivatives ds002748) + 25.2.x (σχεδιασμένο για robustness)
-GIFT          : gift-master (trendscenter) — MOO-ICAR
-NeuroMark     : fMRI 2.2 (105 δίκτυα, modelorder-multi)
+# Exact software versions (COBIDAS reproducibility)
+
+fMRIPrep      : 21.0.2 (public derivatives, ds002748) and 25.2.x (planned for robustness)
+GIFT          : gift-master (trendscenter), MOO-ICAR
+NeuroMark 2.2 : fMRI 2.2, 105 networks, modelorder-multi. PRIMARY network identification (Studies 1 and 2).
+NeuroMark 1.0 : fMRI 1.0 template (Neuromark_fMRI_1.0.nii). Used for the network-definition SENSITIVITY branch (Study 2 posterior/whole/anterior DMN; see docs/05_results.md, Level 2).
 MATLAB        : R2026a (26.1.0.3276743, Update 3)
-SPM           : spm12 (για reslicing template)
+SPM           : SPM12 (template reslicing)
 NBS toolbox   : 1.2
 Python        : 3.13
 nilearn       : 0.14.0
 nibabel       : 5.4.2
+
+# Notes
+# - Data-driven ICA branch (Study 1 sensitivity) uses GIFT Infomax + ICASSO, 20 components.
+# - Triple-network component indices (NeuroMark 2.2): ECN 91-93, DMN 94-101, salience 102-105.

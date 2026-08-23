@@ -1,0 +1,126 @@
+diary on
+
+run('code/04_statistics/run_cnbs_H1_triple.m')
+{Error using <a href="matlab:matlab.lang.internal.introspective.errorDocCallback('run', '/Applications/MATLAB_R2026a.app/toolbox/matlab/lang/run.m', 32)" style="font-weight:bold">run</a> (<a href="matlab: opentoline('/Applications/MATLAB_R2026a.app/toolbox/matlab/lang/run.m',32,0)">line 32</a>)
+code/04_statistics/run_cnbs_H1_triple.m not found.
+} 
+pwd
+
+ans =
+
+    '.'
+
+dir
+
+.                                 lagshift_study1.m                 repro1012_full.csv                
+..                                match_to_neuromark.m              repro1012_full.m                  
+A3_RESULT.txt                     match_v2.m                        rsn_dmn_centroids.m               
+Figure3_Study1_equivalence.png    match_v3.m                        run_cnbs.m                        
+Figure4_Study2_equivalence.png    mean_fd_study1.tsv                run_cnbs_72.m                     
+a3_direction.m                    mean_fd_study2.tsv                run_cnbs_H1_triple.m              
+all_59_headers.txt                my_dataica_20.m                   sc_tmp.mat                        
+all_scripts_for_appendix.txt      my_neuromark10_study2.m           sesoi_check.m                     
+bayes_ancova_runtime.txt          my_neuromark_20.m                 spatial_corr.m                    
+chance_audit.m                    my_neuromark_72.m                 spatial_corr20.m                  
+check_dataica_fnc.m               my_neuromark_72_v25.m             stats_study2.m                    
+check_domains.m                   my_neuromark_V2.m                 study1_results.log                
+check_graymatter.m                my_neuromark_Vpaper.m             study2_delta_domain.mat           
+check_nm10.m                      my_neuromark_study2.m             study2_final_missing_results.txt  
+check_uncorrected.m               my_neuromark_test.m               table3_full.m                     
+clinical_corr.m                   nbs_work                          table3_full_v25.m                 
+clinical_study2.tsv               nbs_work72                        table6_full.m                     
+corr_qc_study2.m                  nbs_work72_H1                     tag_paper_map_study2.m            
+corrected_results_runtime.txt     nbs_work72_H1_FIXED               thesis_figure_candidates          
+data20                            outlier_audit.m                   tost_ancova.m                     
+data72                            output20                          tost_ancova_runtime.txt           
+data72_v25                        output72                          tost_peredge.m                    
+data_clean                        output72_V2                       tost_peredge_runtime.txt          
+data_study2                       output72_Vpaper                   tost_peredge_v25.m                
+describe_papermap_study2.m        output72_v25                      tost_peredge_v25_runtime.txt      
+describe_study2.m                 output_dataica20                  tost_perpair.m                    
+describe_tn_study2.m              output_study2                     tost_perpair_results.mat          
+describe_tn_study2_long.csv       output_study2_nm10                tost_study1.m                     
+describe_tn_study2_summary.csv    output_test                       tost_study1_covar.m               
+direction_audit.m                 overlap_audit.m                   tost_study1_covar_v25.m           
+dmn10_fix.m                       pair1012_study2.csv               tost_study1_fixed.m               
+dmn10_study2.m                    pair1012_study2.m                 tost_study2.m                     
+dmn_centroids.csv                 papermap_study2_persubject.csv    tost_study2_exact.m               
+dmn_centroids.m                   participants_study1.tsv           tost_study2_exact_runtime.txt     
+dmn_centroids.mat                 perconn_study2.m                  tpm_work                          
+dmn_centroids_nm10.m              perm_null.m                       
+dmn_centroids_nm10.mat            perm_null_runtime.txt             
+dmn_peaks_nm10.m                  postdmn_22.m                      
+
+cd('<path>')
+pwd
+
+ans =
+
+    '<path>'
+
+dir('code/04_statistics')
+
+.                        direction_audit.m        run_nbs_72.m             tost_peredge_v25.m       
+..                       outlier_audit.m          sesoi_check.m            tost_perpair.m           
+.gitkeep                 overlap_audit.m          stats_study2.m           tost_study1.m            
+a3_direction.m           pair1012_study2.m        table3_full.m            tost_study1_covar.m      
+chance_audit.m           perm_null.m              table3_full_v25.m        tost_study1_covar_v25.m  
+check_domains.m          repro1012_full.m         table6_full.m            tost_study1_fixed.m      
+check_uncorrected.m      run_cnbs_H1_triple.m     tost_ancova.m            tost_study2.m            
+clinical_corr.m          run_nbs.m                tost_peredge.m           
+
+cd('.')
+fprintf('\n===== H1 FIXED RESULT =====\n');
+
+===== H1 FIXED RESULT =====
+
+S = load('nbs_work72_H1_FIXED/H1_result.mat');
+
+whos('-file','nbs_work72_H1_FIXED/H1_result.mat')
+  Name        Size              Bytes  Class     Attributes
+
+  TRIPLE      1x15                120  double              
+  nbs         1x1             4273565  struct    global    
+  nbs_n       1x1                   8  double              
+
+
+if isfield(S,'nbs')
+    disp(S.nbs)
+    if isfield(S.nbs,'NBS')
+        fprintf('\n===== NBS STRUCTURE =====\n');
+        disp(S.nbs.NBS)
+    end
+end
+      GLM: [1×1 struct]
+    STATS: [1×1 struct]
+      NBS: [1×1 struct]
+       UI: [1×1 struct]
+
+
+===== NBS STRUCTURE =====
+            n: 0
+      con_mat: []
+         pval: []
+    test_stat: [15×15 double]
+
+fprintf('\n===== ORIGINAL H1 =====\n');
+
+===== ORIGINAL H1 =====
+whos('-file','nbs_work72_H1/H1_result.mat')
+  Name        Size              Bytes  Class     Attributes
+
+  TRIPLE      1x15                120  double              
+  nbs         1x1             4272953  struct    global    
+  nbs_n       1x1                   8  double              
+
+
+fprintf('\n===== FIXED H1 =====\n');
+
+===== FIXED H1 =====
+whos('-file','nbs_work72_H1_FIXED/H1_result.mat')
+  Name        Size              Bytes  Class     Attributes
+
+  TRIPLE      1x15                120  double              
+  nbs         1x1             4273565  struct    global    
+  nbs_n       1x1                   8  double              
+

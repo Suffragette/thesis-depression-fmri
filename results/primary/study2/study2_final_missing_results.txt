@@ -1,0 +1,117 @@
+diary on
+
+fprintf('\n\n===== TOST STUDY 2 =====\n');
+
+
+===== TOST STUDY 2 =====
+tost_study2
+[Warning: Column headers from the file were modified to make them valid MATLAB identifiers before creating
+variable names for the table. The original column headers are saved in the VariableDescriptions property.
+Set 'VariableNamingRule' to 'preserve' to use the original column headers as table variable names.] 
+======== TOST EQUIVALENCE, STUDY 2 (NeuroMark 2.2) ========
+Paired design. SESOI = effect size reported by the paper.
+
+--- within-DMN | NT  (paper dz=0.571) ---
+ n=15  mean Dz=+0.0130  dz=+0.192  t(14)=+0.74  p=0.470  95%CI[-0.0246,+0.0507]
+ >> TOST: smallest rejectable |dz| = 0.65
+ >> at paper dz=0.571 (grid 0.55): p_TOST=0.0935 -> not excluded
+ >> power note: n=15 can only exclude large effects.
+
+--- DMN-ECN    | TR  (paper dz=0.652) ---
+ n=14  mean Dz=-0.0085  dz=-0.091  t(13)=-0.34  p=0.740  95%CI[-0.0626,+0.0456]
+ >> TOST: smallest rejectable |dz| = 0.60
+ >> at paper dz=0.652 (grid 0.65): p_TOST=0.0283 -> PAPER EFFECT EXCLUDED
+ >> power note: n=14 can only exclude large effects.
+
+--- DMN-ECN    | NFB (paper dz=1.368) ---
+ n= 6  mean Dz=-0.0240  dz=-0.227  t(5)=-0.56  p=0.602  95%CI[-0.1349,+0.0869]
+ >> TOST: smallest rejectable |dz| = 1.05
+ >> at paper dz=1.368 (grid 1.35): p_TOST=0.0202 -> PAPER EFFECT EXCLUDED
+ >> power note: n=6 can only exclude large effects.
+
+--- within-DMN | all29 (descriptive) ---
+ n=29  mean Dz=-0.0054  dz=-0.074  t(28)=-0.40  p=0.694  95%CI[-0.0332,+0.0224]
+ >> TOST: smallest rejectable |dz| = 0.40
+ >> at paper dz=0.571 (grid 0.55): p_TOST=0.0080 -> PAPER EFFECT EXCLUDED
+ >> power note: n=29 can only exclude large effects.
+
+INTERPRETATION LIMITS:
+ - Equivalence bounds are LARGE. Small/moderate effects remain compatible.
+ - Claim is: effects of the magnitude reported by the paper are excluded.
+ - NOT a claim that no difference exists.
+
+fprintf('\n\n===== POSTERIOR DMN — NEUROMARK 2.2 =====\n');
+
+
+===== POSTERIOR DMN — NEUROMARK 2.2 =====
+postdmn_22
+[Warning: Column headers from the file were modified to make them valid MATLAB identifiers before creating
+variable names for the table. The original column headers are saved in the VariableDescriptions property.
+Set 'VariableNamingRule' to 'preserve' to use the original column headers as table variable names.] 
+===== NT group (n=15) | paper says DECREASE =====
+
+posterior-DMN within (KEY)   pairs= 6  Dz=+0.0195 dz=+0.11 t(14)=+0.44 p=0.670 CI[-0.076,+0.115]
+                             (1)DIR DISAGREES  (2)STAT ns  LOO p[0.227,0.999]
+
+posterior-DMN <-> ECN        pairs=12  Dz=-0.0230 dz=-0.26 t(14)=-1.02 p=0.324 CI[-0.071,+0.025]
+                             (1)DIR agrees  (2)STAT ns  LOO p[0.093,0.574]
+
+anterior-DMN within (ctrl)   pairs= 3  Dz=+0.0371 dz=+0.23 t(14)=+0.89 p=0.387 CI[-0.052,+0.126]
+                             (1)DIR DISAGREES  (2)STAT ns  LOO p[0.194,0.789]
+
+post <-> ant (ctrl)          pairs=12  Dz=-0.0137 dz=-0.23 t(14)=-0.87 p=0.396 CI[-0.047,+0.020]
+                             (1)DIR agrees  (2)STAT ns  LOO p[0.213,0.674]
+
+ALL DMN within (cf. old)     pairs=28  Dz=+0.0130 dz=+0.19 t(14)=+0.74 p=0.470 CI[-0.025,+0.051]
+                             (1)DIR DISAGREES  (2)STAT ns  LOO p[0.128,0.834]
+
+posterior +94 (sens.)        pairs=10  Dz=+0.0230 dz=+0.19 t(14)=+0.73 p=0.475 CI[-0.044,+0.090]
+                             (1)DIR DISAGREES  (2)STAT ns  LOO p[0.153,0.748]
+
+===== TR group (n=14), same measures =====
+posterior-DMN within (KEY)   Dz=-0.0106 p=0.779
+posterior-DMN <-> ECN        Dz=-0.0247 p=0.436
+
+LIMITS: IC12 of paper is hybrid DMN/LFr -> two partial analogues tested.
+Mean of a pair-set is not the paper single pair. Mapping remains nominal.
+
+fprintf('\n\n===== POSTERIOR/ANTERIOR DMN — NEUROMARK 1.0 SENSITIVITY =====\n');
+
+
+===== POSTERIOR/ANTERIOR DMN — NEUROMARK 1.0 SENSITIVITY =====
+dmn10_study2
+=== NEUROMARK 1.0 | Study 2 | posterior vs anterior DMN ===
+pairs: postDMN=10 antDMN=1 allDMN=21 ant-post=10 DMN-CC=119
+
+--- a1 | PAPER: 10-12 within-DMN NT DECREASE (t=2.21 p=.044) ---
+postDMN  (KEY)       n=15  Dz=-0.0260  t(14)=-1.27 p=0.225 CI[-0.070,+0.018]
+                     (1) DIRECTION: AGREES with paper   (2) STATS: NOT significant
+
+allDMN   (cf 2.2)    n=15  Dz=+0.0002  t(14)=+0.01 p=0.992 CI[-0.034,+0.034]
+                     (1) DIRECTION: DISAGREES   (2) STATS: NOT significant
+
+antDMN   (control)   n=15  Dz=+0.1452  t(14)=+2.78 p=0.015 CI[+0.033,+0.257]
+                     (1) DIRECTION: DISAGREES   (2) STATS: significant
+
+ant-post (control)   n=15  Dz=+0.0118  t(14)=+0.55 p=0.592 CI[-0.034,+0.058]
+                     (1) DIRECTION: DISAGREES   (2) STATS: NOT significant
+
+--- a2 | PAPER: 11-16 DMN-ECN combined TR INCREASE (t=-2.44 p=.030) ---
+DMN-CC               n=14  Dz=-0.0083  t(13)=-0.91 p=0.378 CI[-0.028,+0.011]
+                     (1) DIRECTION: DISAGREES   (2) STATS: NOT significant
+
+postDMN-CC           n=14  Dz=-0.0094  t(13)=-0.86 p=0.405 CI[-0.033,+0.014]
+                     (1) DIRECTION: DISAGREES   (2) STATS: NOT significant
+
+--- a3 | PAPER: 11-16 DMN-ECN NFB INCREASE (t=-3.35 p=.020) | n=6 ---
+DMN-CC               n= 6  Dz=+0.0181  t(5)=+1.47 p=0.201 CI[-0.014,+0.050]
+                     (1) DIRECTION: AGREES with paper   (2) STATS: NOT significant
+
+postDMN-CC           n= 6  Dz=+0.0159  t(5)=+1.21 p=0.282 CI[-0.018,+0.050]
+                     (1) DIRECTION: AGREES with paper   (2) STATS: NOT significant
+
+
+LIMITS: IC12 of paper = hybrid DMN/LFr; mapping nominal (Table 5/11);
+mean of pair-set ~= single pair of paper; CC(26-42) is ECN proxy in 1.0.
+
+diary off

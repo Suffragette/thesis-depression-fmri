@@ -1,0 +1,32 @@
+Found 72 per-subject FNC files
+Fields in per-subject file: spectra_tc, dynamic_range, fALFF, fnc_corrs
+Loaded FNC: 20x20x72
+
+==== DATA-DRIVEN FNC: group comparison (51 depr vs 21 ctrl) ====
+pair              depr      ctrl        t        p        d  dir
+within-ECN     -0.0777   -0.2458    1.260   0.2118    0.327  depr>ctrl 
+within-SAL      0.2004   -0.4939    1.817   0.0735    0.471  depr>ctrl 
+DMN-ECN        -0.0340   -0.0804    0.342   0.7334    0.089  depr>ctrl 
+DMN-SAL        -0.0356   -0.0787    0.244   0.8082    0.063  depr>ctrl 
+ECN-SAL        -0.0087   -0.0665    0.749   0.4563    0.194  depr>ctrl 
+
+==== Connection-wise among networks of interest ====
+pair                  t        p        d  dir
+IC06-IC12          0.930   0.3555    0.241  depr>ctrl 
+IC06-IC14         -0.525   0.6010   -0.136  depr<ctrl 
+IC06-IC18          0.116   0.9082    0.030  depr>ctrl 
+IC06-IC01          1.917   0.0593    0.497  depr>ctrl 
+IC06-IC09         -1.835   0.0708   -0.476  depr<ctrl 
+IC12-IC14         -0.075   0.9404   -0.019  depr<ctrl 
+IC12-IC18         -0.731   0.4671   -0.190  depr<ctrl 
+IC12-IC01         -1.969   0.0529   -0.511  depr<ctrl 
+IC12-IC09          1.073   0.2870    0.278  depr>ctrl 
+IC14-IC18          2.320   0.0233    0.601  depr>ctrl *
+IC14-IC01          0.701   0.4856    0.182  depr>ctrl 
+IC14-IC09          0.442   0.6600    0.115  depr>ctrl 
+IC18-IC01         -0.319   0.7504   -0.083  depr<ctrl 
+IC18-IC09          0.879   0.3825    0.228  depr>ctrl 
+IC01-IC09          1.817   0.0735    0.471  depr>ctrl 
+
+Connections p<0.05 uncorrected: 1/15 (chance ~0.8)
+Bonferroni threshold (15 tests): p<0.0033 -> 0 significant

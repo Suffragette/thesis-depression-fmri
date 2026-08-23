@@ -1,0 +1,36 @@
+[Warning: Column headers from the file were modified to make them valid MATLAB
+identifiers before creating variable names for the table. The original column
+headers are saved in the VariableDescriptions property.
+Set 'VariableNamingRule' to 'preserve' to use the original column headers as
+table variable names.] 
+======== TOST EQUIVALENCE, STUDY 2 (NeuroMark 2.2) ========
+Paired design. SESOI = effect size reported by the paper.
+
+--- within-DMN | NT  (paper dz=0.571) ---
+ n=15  mean Dz=+0.0130  dz=+0.192  t(14)=+0.74  p=0.470  95%CI[-0.0246,+0.0507]
+ >> TOST: smallest rejectable |dz| = 0.65
+ >> EXACT paper dz=0.571: raw bound=+0.03880  pL=0.0052  pU=0.0820  p_TOST=0.0820 -> not excluded
+ >> power note: n=15 can only exclude large effects.
+
+--- DMN-ECN    | TR  (paper dz=0.652) ---
+ n=14  mean Dz=-0.0085  dz=-0.091  t(13)=-0.34  p=0.740  95%CI[-0.0626,+0.0456]
+ >> TOST: smallest rejectable |dz| = 0.60
+ >> EXACT paper dz=0.652: raw bound=+0.06107  pL=0.0279  pU=0.0078  p_TOST=0.0279 -> PAPER EFFECT EXCLUDED
+ >> power note: n=14 can only exclude large effects.
+
+--- DMN-ECN    | NFB (paper dz=1.368) ---
+ n= 6  mean Dz=-0.0240  dz=-0.227  t(5)=-0.56  p=0.602  95%CI[-0.1349,+0.0869]
+ >> TOST: smallest rejectable |dz| = 1.05
+ >> EXACT paper dz=1.368: raw bound=+0.14451  pL=0.0191  pU=0.0057  p_TOST=0.0191 -> PAPER EFFECT EXCLUDED
+ >> power note: n=6 can only exclude large effects.
+
+--- within-DMN | all29 (descriptive) ---
+ n=29  mean Dz=-0.0054  dz=-0.074  t(28)=-0.40  p=0.694  95%CI[-0.0332,+0.0224]
+ >> TOST: smallest rejectable |dz| = 0.40
+ >> EXACT paper dz=0.571: raw bound=+0.04175  pL=0.0061  pU=0.0008  p_TOST=0.0061 -> PAPER EFFECT EXCLUDED
+ >> power note: n=29 can only exclude large effects.
+
+INTERPRETATION LIMITS:
+ - Equivalence bounds are LARGE. Small/moderate effects remain compatible.
+ - Claim is: effects of the magnitude reported by the paper are excluded.
+ - NOT a claim that no difference exists.

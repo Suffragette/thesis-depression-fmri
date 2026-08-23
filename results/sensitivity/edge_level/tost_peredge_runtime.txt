@@ -1,0 +1,26 @@
+diary on
+run('tost_peredge.m')
+[Warning: Column headers from the file were modified to make them valid MATLAB identifiers before creating
+variable names for the table. The original column headers are saved in the VariableDescriptions property.
+Set 'VariableNamingRule' to 'preserve' to use the original column headers as table variable names.] 
+Loaded. edges: 28 within-DMN + 24 DMN-ECN
+
+======= STUDY 1: per-edge TOST (between-group, n=51/21) =======
+SESOI d=0.606 : edges excluded 20/52 (38%) | sig (uncorr) 1
+   observed |d| per edge: median 0.20  max 0.54
+SESOI d=0.671 : edges excluded 33/52 (63%) | sig (uncorr) 1
+   observed |d| per edge: median 0.20  max 0.54
+
+======= STUDY 2 NT: per-edge TOST (paired, n=15) =======
+SESOI dz=0.571 : edges excluded 10/28 | sig (uncorr) 1
+   observed |dz| per edge: median 0.15  max 0.86
+
+======= SCALE CHECK vs paper =======
+paper 10-12: pre .45+-.15  post .31+-.18  -> raw change -0.140
+our within-DMN edges: |raw change| median 0.033 max 0.144
+our per-edge SD of change: median 0.216 (paper implies ~0.17)
+our SD of the 28-edge MEAN: 0.068  <-- the wrong denominator
+dilution factor: 3.2x
+
+=> A single-edge change of 0.140 appears as 0.0050 in the 28-edge mean.
+diary off

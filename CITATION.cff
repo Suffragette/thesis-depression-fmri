@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite it as below."
+title: "A reanalysis of Brain Networks Connectivity in Mild to Moderate Depression (Bezmaternykh et al., 2021)"
+abstract: "Same-data reproducibility reanalysis of resting-state functional-connectivity findings using fMRIPrep and NeuroMark, with primary, sensitivity, and equivalence analyses."
+authors:
+  - family-names: Kouimountzi
+    given-names: Christina
+type: software
+license: MIT
+keywords:
+  - reproducibility
+  - resting-state fMRI
+  - functional connectivity
+  - depression
+  - NeuroMark
+  - Network-Based Statistic
+references:
+  - type: article
+    title: "Brain networks connectivity in mild to moderate depression: resting state fMRI study with implications to nonpharmacological treatment"
+    authors:
+      - family-names: Bezmaternykh
+        given-names: D. D.
+    year: 2021
+    journal: "Neural Plasticity"
+    volume: "2021"
+    notes: "Article 8846097; https://doi.org/10.1155/2021/8846097; PMID 33510782"

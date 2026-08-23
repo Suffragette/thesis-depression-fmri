@@ -1,0 +1,34 @@
+diary on
+
+run('tost_peredge_v25.m')
+[Warning: Column headers from the file were modified to make them valid MATLAB identifiers before creating
+variable names for the table. The original column headers are saved in the VariableDescriptions property.
+Set 'VariableNamingRule' to 'preserve' to use the original column headers as table variable names.] 
+Loaded. edges: 28 within-DMN + 24 DMN-ECN
+
+======= STUDY 1: per-edge TOST (between-group, n=51/21) =======
+SESOI d=0.606 : edges excluded 23/52 (44%) | sig (uncorr) 5
+   observed |d| per edge: median 0.22  max 0.83
+SESOI d=0.671 : edges excluded 28/52 (54%) | sig (uncorr) 5
+   observed |d| per edge: median 0.22  max 0.83
+
+======= STUDY 2 NT: per-edge TOST (paired, n=15) =======
+SESOI dz=0.571 : edges excluded 10/28 | sig (uncorr) 1
+   observed |dz| per edge: median 0.15  max 0.86
+
+======= SCALE CHECK vs paper =======
+paper 10-12: pre .45+-.15  post .31+-.18  -> raw change -0.140
+our within-DMN edges: |raw change| median 0.033 max 0.144
+our per-edge SD of change: median 0.216 (paper implies ~0.17)
+our SD of the 28-edge MEAN: 0.068  <-- the wrong denominator
+dilution factor: 3.2x
+
+=> A single-edge change of 0.140 appears as 0.0050 in the 28-edge mean.
+
+===== v25 DIRECTION CHECK (depr vs HC) =====
+within-DMN: depr=+0.0527  HC=+0.0603  -> HC>depr  p=0.603
+DMN-ECN   : depr=+0.0127  HC=+0.0049  -> depr>HC  p=0.475
+Compare to 2.2 (run tost_peredge.m): within-DMN was depr>HC there.
+If direction differs across pipelines -> SIGN INSTABILITY (both n.s.).
+
+diary off

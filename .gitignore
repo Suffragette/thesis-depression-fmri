@@ -1,10 +1,11 @@
+# Raw / large data (not stored in git)
 data/
 derivatives/
 *.nii
 *.nii.gz
 *.mat
 *.tar.gz
-*.png
-.ipynb_checkpoints/
+# OS / tooling
 .DS_Store
 __pycache__/
+.ipynb_checkpoints/

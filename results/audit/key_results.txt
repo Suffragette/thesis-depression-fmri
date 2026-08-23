@@ -1,0 +1,122 @@
+
+===== TOST RESULT =====
+NOI:
+  Columns 1 through 13
+
+    91    92    93    94    95    96    97    98    99   100   101   102   103
+
+  Columns 14 through 15
+
+   104   105
+
+First 15 domains:
+    ""
+    ""
+    ""
+    ""
+    ""
+    ""
+    ""
+    ""
+    ""
+    ""
+    ""
+    ""
+    ""
+    ""
+    ""
+
+rows size: 105 x 9
+First 10 rows:
+  Columns 1 through 7
+
+   91.0000   92.0000    0.1896   -0.3275    0.7067    0.4671    0.6500
+   91.0000   93.0000    0.2181   -0.2990    0.7352    0.4031    0.7000
+   91.0000   94.0000    0.1131   -0.4040    0.6303    0.6639    0.5500
+   91.0000   95.0000    0.3448   -0.1724    0.8619    0.1880    0.8000
+   91.0000   96.0000    0.2869   -0.2302    0.8040    0.2723    0.7500
+   91.0000   97.0000    0.3633   -0.1539    0.8804    0.1656    0.8000
+   91.0000   98.0000    0.2119   -0.3052    0.7290    0.4166    0.6500
+   91.0000   99.0000   -0.1665   -0.6836    0.3507    0.5230    0.6000
+   91.0000  100.0000    0.1921   -0.3250    0.7093    0.4612    0.6500
+   91.0000  101.0000    0.4472   -0.0699    0.9643    0.0890    0.9000
+
+  Columns 8 through 9
+
+         0    1.0000
+         0    1.0000
+         0    1.0000
+         0    1.0000
+         0    1.0000
+         0    1.0000
+         0    1.0000
+    1.0000         0
+         0    1.0000
+         0    1.0000
+
+
+===== NBS H1 RESULT =====
+TRIPLE:
+  Columns 1 through 13
+
+    91    92    93    94    95    96    97    98    99   100   101   102   103
+
+  Columns 14 through 15
+
+   104   105
+
+nbs_n = 0
+Top-level fields of nbs:
+    {'GLM'  }
+    {'STATS'}
+    {'NBS'  }
+    {'UI'   }
+
+GLM                        class=struct      size=1x1x 
+STATS                      class=struct      size=1x1x 
+NBS                        class=struct      size=1x1x 
+UI                         class=struct      size=1x1x 
+
+===== DATA-DRIVEN ICA MATCH =====
+IC01  bestNM=105  r=+0.0230  domain=SAL
+IC02  bestNM=88  r=+0.0274  domain=HC-FR
+IC03  bestNM=58  r=+0.0327  domain=SM
+IC04  bestNM=89  r=+0.0281  domain=HC-FR
+IC05  bestNM=88  r=+0.0259  domain=HC-FR
+IC06  bestNM=99  r=+0.0298  domain=DMN
+IC07  bestNM=74  r=+0.0417  domain=HC-IT
+IC08  bestNM=88  r=+0.0309  domain=HC-FR
+IC09  bestNM=103  r=+0.0588  domain=SAL
+IC10  bestNM=89  r=+0.0465  domain=HC-FR
+IC11  bestNM=45  r=+0.0422  domain=SC-ET
+IC12  bestNM=88  r=+0.0399  domain=HC-FR
+IC13  bestNM=32  r=+0.0434  domain=PL
+IC14  bestNM=85  r=+0.0389  domain=HC-FR
+IC15  bestNM=88  r=+0.0370  domain=HC-FR
+IC16  bestNM=69  r=+0.0391  domain=HC-IT
+IC17  bestNM=88  r=+0.0348  domain=HC-FR
+IC18  bestNM=67  r=+0.0442  domain=SM
+IC19  bestNM=81  r=+0.0446  domain=HC-FR
+IC20  bestNM=76  r=+0.0415  domain=HC-TP
+
+===== DATA-DRIVEN ICA MATCH V2 =====
+IC01  r=+0.0146  domain=SAL
+IC02  r=+0.0109  domain=VI-OC
+IC03  r=+0.0125  domain=SM
+IC04  r=+0.0112  domain=HC-IT
+IC05  r=+0.0108  domain=VI-OC
+IC06  r=+0.0106  domain=DMN
+IC07  r=+0.0152  domain=HC-IT
+IC08  r=+0.0082  domain=SM
+IC09  r=+0.0139  domain=SAL
+IC10  r=+0.0116  domain=HC-FR
+IC11  r=+0.0137  domain=SC-ET
+IC12  r=+0.0110  domain=HC-FR
+IC13  r=+0.0050  domain=PL
+IC14  r=+0.0074  domain=HC-FR
+IC15  r=+0.0138  domain=SC-ET
+IC16  r=+0.0131  domain=HC-IT
+IC17  r=+0.0094  domain=VI-OC
+IC18  r=+0.0068  domain=HC-TP
+IC19  r=+0.0149  domain=HC-FR
+IC20  r=+0.0095  domain=VI-OT
