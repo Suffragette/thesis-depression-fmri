@@ -535,7 +535,7 @@ Neither was demonstrated.
 
 ---
 
-## Tree K: What each branch contributes to the thesis
+## Summary: what each branch contributes to the thesis
 
 The branches above are not a random robustness buffet; they form a chain of
 questions. Each contributes one specific thing to the argument:
