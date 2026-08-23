@@ -70,9 +70,10 @@ the label tells you how much weight a result carries. Statuses: **PRIMARY**,
 `output_test/` outputs are development/debugging only and are not scientific results.
 
 
-## A note on `bayes_ancova_runtime.txt`
+## On Bayesian ANCOVA
 
-This file is a **misnamed duplicate** runtime produced by `tost_ancova.m` (its header
-reads `run('tost_ancova.m')` and its content is ANCOVA + TOST). No standalone Bayesian
-ANCOVA was preserved or identified, so no `bayes_ancova.m` exists. The file is kept in
-`results/superseded/` for provenance only.
+No standalone Bayesian ANCOVA was run. A file previously named `bayes_ancova_runtime.txt`
+turned out to be a misnamed duplicate of the `tost_ancova.m` output (ANCOVA + TOST, no
+Bayes factors) and was removed to avoid confusion. Note: `tost_study1.m` /
+`tost_study1_fixed.m` (historical) contain unadjusted JZS Bayes factors for the
+two-sample t-test, which is a different, superseded analysis.

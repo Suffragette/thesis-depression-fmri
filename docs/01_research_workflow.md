@@ -537,6 +537,20 @@ Neither was demonstrated.
 
 ## Tree K: What each branch contributes to the thesis
 
-```
+The branches above are not a random robustness buffet; they form a chain of
+questions. Each contributes one specific thing to the argument:
 
-```
+- **Confirmatory NBS** establishes the primary negative result: no group difference survives family-wise-error control.
+- **Targeted ANCOVA + TOST** upgrades "not found" to "excluded": the two highlighted effects are rejected at the originally reported size.
+- **Chance and permutation audits** reframe the original's counts as near what chance and dependence predict.
+- **Preprocessing sensitivity** rules out the pipeline as the explanation: the null persists and the sign is unstable across variants.
+- **Connectivity-estimator sensitivity** rules out the metric: lag-shift changes magnitudes but does not restore the effect.
+- **Parcellation sensitivity** (data-driven ICA, NeuroMark 1.0) rules out network definition and exposes the component-correspondence problem.
+- **Per-edge and exact equivalence tests** quantify how much of the connectome, and which longitudinal claims, can be bounded (excluded) versus left unresolved.
+- **Clinical-correlation reanalysis** shows the biomarker claims do not reproduce at the reported magnitude.
+- **Overlap audit** sets the interpretive limit: Study 1 and Study 2 are not independent, so convergence is not independent evidence.
+- **Spatial validation** confirms the networks are correctly identified, so the null results are not a labelling artefact.
+
+Together they support a single, precision-aware conclusion: the original findings do
+not reproduce at the reported magnitude or stability, and no single tested analytical
+choice accounts for the difference.
