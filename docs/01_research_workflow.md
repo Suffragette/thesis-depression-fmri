@@ -9,6 +9,9 @@ They are provided as a navigable record so that anyone (including future readers
 reviewers, or an AI assistant helping assemble the manuscript) can trace the logic
 behind every analysis.
 
+Trees A to J are process diagrams. The final section is a plain-language summary,
+not a diagram.
+
 > **On interpretation.** The nodes below describe the *process* (what was asked and
 > found at each step), not polished conclusions. The careful, final wording of the
 > claims lives in the thesis itself and in `docs/03_decision_rules.md`. In

@@ -56,7 +56,7 @@ between them, and the status of every analysis, lives in `docs/`.
 
 ## Where to look for what
 
-- Why each decision was made: `docs/` (especially `04_deviations_from_original.md`).
+- Why each decision was made: `docs/` (especially `04_deviations_from_original.md` and `08_computational_pipeline.md`).
 - What each analysis is and its status: `docs/02_analysis_map.md`, `docs/03_analysis_status.md`.
 - What exactly came out, with sources: `results/RESULTS_GENEALOGY.md`.
 - How a third party reruns it: `reproduction/RUN_ORDER.md`.
