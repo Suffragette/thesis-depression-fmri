@@ -21,7 +21,7 @@ individual choice.
 | `direction_pipelines.txt` | preprocessing sensitivity | Sensitivity analysis (one-at-a-time) | Whether the direction of the within-DMN / DMN–ECN effect is stable across four reasonable pipelines. |
 | `dataica_group.txt` | parcellation sensitivity | Sensitivity to parcellation (original's own ICA) | Whether the findings reappear under the original's own data-driven decomposition (Infomax+ICASSO, 20 comp). |
 | `ica_matching.txt` | parcellation sensitivity | Spatial identification (spatial correlation) | Which data-driven components correspond to DMN/ECN/salience, enabling comparison. |
-| `lagshift_metric.txt` | connectivity metric | Sensitivity to the connectivity metric | Whether the conclusion depends on zero-lag vs lag-shift (max-\|r\|) estimation; quantifies the inflation from max-over-lags. |
+| `sensitivity/estimator/lagshift_study1_runtime.txt` | connectivity metric | Sensitivity to the connectivity metric | Zero-lag vs lag-shift (max-\|r\|, +/-4 TRs): r=.836 between estimators, +23% inflation, but 0/105 survive FDR under either metric. The conclusion does not depend on the estimator. |
 | `table3_finding.txt` | Study 1 finding-by-finding | Finding-by-finding (direction + significance) | For each of the original's eight Table-3 connections, whether it reproduces in direction and significance. |
 | `clinical_correlations.txt` | clinical correlations | **Correlation analysis** (FC vs clinical change) | Whether the treatment-response correlations (Tables 7–10) reproduce; flags the "winner's curse" from very small samples (n=4–6). |
 | `table6_finding.txt` | Study 2 dynamics | Finding-by-finding (Study 2 dynamics) | How many of the seventeen Table-6 treatment-related claims are testable, and whether those reproduce. |
