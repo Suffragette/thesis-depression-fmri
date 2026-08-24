@@ -1,0 +1,33 @@
+Computing zero-lag and lag-shift FNC for 72 subjects...
+  20/72
+  40/72
+  60/72
+done.
+
+======== ESTIMATOR COMPARISON ========
+correlation between the two FNC estimates : r = 0.836
+mean |r| zero-lag  : 0.267
+mean |r| lag-shift : 0.328   (inflation: +23.0%)
+chosen lag = 0 in 47.2% of pairs; |lag|>=2 in 37.6%
+(max-over-lags is positively biased by construction)
+
+======== PRESPECIFIED CONTRASTS ========
+--- ZERO-LAG (main) ---
+contrast            t        p        d         95%% CI on d
+within-DMN      0.519   0.6053    0.135  [-0.383, +0.652]
+DMN-ECN         0.761   0.4495    0.197  [-0.320, +0.714]
+
+--- LAG-SHIFT (paper estimator) ---
+contrast            t        p        d         95%% CI on d
+within-DMN      0.387   0.7002    0.100  [-0.417, +0.617]
+DMN-ECN        -0.254   0.7999   -0.066  [-0.583, +0.451]
+
+======== ALL 105 CONNECTIONS ========
+zero-lag   : p<0.05 uncorrected  1/105 | survive FDR 0 | max|d| 0.648 | mean|d| 0.178
+lag-shift  : p<0.05 uncorrected  4/105 | survive FDR 0 | max|d| 0.676 | mean|d| 0.177
+
+CONCLUSION TEMPLATE:
+If both estimators give the same qualitative answer, state:
+  "Results were unchanged when FNC was estimated with the lag-shift
+   max-|r| algorithm used by the original study (+/-4 TRs); see Table Sx."
+If they differ, that difference IS a finding and must be reported.
