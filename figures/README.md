@@ -1,7 +1,8 @@
 # Figures
 
-- `main/` : main-text figures (targeted DMN-ECN FNC for Study 1 and Study 2).
-- `supplementary/` : NeuroMark network-summary renders, connectograms, orthogonal views.
+- `main/` : main-text figures. Present: Study 1 equivalence, Study 2 equivalence, and the targeted DMN-ECN FNC figures for Study 1 and Study 2.
+- `supplementary/` : NeuroMark network-summary renders, connectograms, and orthogonal views (identification / QC, not results).
 
-To add the two equivalence figures, copy them here:
-`Figure3_Study1_equivalence.png` and `Figure4_Study2_equivalence.png` into `main/`.
+All four main figures are already in `main/`; no copying is needed. Bulk GIFT renders,
+`.fig`/`.nii`/subject-level files and test-run outputs are intentionally kept out of
+the curated figure layer.

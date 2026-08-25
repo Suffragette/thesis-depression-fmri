@@ -1,5 +1,5 @@
 %% table6_full.m
-% ΟΛΟΙ οι 17 ισχυρισμοί δυναμικής του paper (Table 6), Study 2.
+% ΟΛΕΣ οι 18 συγκρίσεις δυναμικής του paper (Table 6), Study 2 (17 nominally significant· η CBT 1-3, p=.051, ειναι n/s).
 % Για κάθε ΑΝΤΙΣΤΟΙΧΙΣΙΜΟ ισχυρισμό: διπλό κριτήριο ξεχωριστά ->
 %   (1) ΚΑΤΕΥΘΥΝΣΗ: ίδιο πρόσημο με paper; (ανεξαρτήτως στατιστικής)
 %   (2) ΣΤΑΤΙΣΤΙΚΗ: paired t-test, p/CI
@@ -34,7 +34,7 @@ catmean=@(M,P) mean(arrayfun(@(k)M(P(k,1),P(k,2)),1:size(P,1)));
 persubj=@(P) arrayfun(@(s) catmean(squeeze(post(s,:,:)),P)-catmean(squeeze(pre(s,:,:)),P), 1:NSUB)';
 wD=persubj(wP); eD=persubj(eP);
 
-% ================== ΟΙ 17 ΙΣΧΥΡΙΣΜΟΙ TABLE 6 ==================
+% ================== ΟΙ 18 ΣΥΓΚΡΙΣΕΙΣ TABLE 6 ==================
 % {pair, IC-labels(Table5), ομάδα, paper t, κατηγορία-μας, δεδομένα-μας}
 % κατηγορία: 'wDMN' | 'DMNECN' | 'OUT' (εκτός) | 'HALF' (μερικώς)
 C = {
@@ -62,7 +62,7 @@ C = {
  '13-14','SMN-?','NFB',+3.26,'OUT',[]
 };
 
-fprintf('============ TABLE 6: ΟΛΟΙ ΟΙ 17 ΙΣΧΥΡΙΣΜΟΙ ============\n');
+fprintf('============ TABLE 6: ΟΛΕΣ ΟΙ 18 ΣΥΓΚΡΙΣΕΙΣ (17 nominally significant) ============\n');
 fprintf('Κανόνας: paper t>0 => ΜΕΙΩΣΗ (pre>post)· t<0 => ΑΥΞΗΣΗ.\n');
 fprintf('Δικό μας πρόσημο Δz: + => αύξηση, - => μείωση.\n\n');
 
@@ -92,12 +92,12 @@ for i=1:size(C,1)
 end
 
 fprintf('============ ΣΥΝΟΨΗ ============\n');
-fprintf('Σύνολο ισχυρισμών Table 6: 17\n');
+fprintf('Σύνολο συγκρίσεων Table 6: 18 (17 nominally significant)\n');
 fprintf('Αντιστοιχίσιμοι σε NeuroMark triple-network: %d\n', nIn);
 fprintf('  εκ των οποίων συμφωνούν σε ΚΑΤΕΥΘΥΝΣΗ: %d/%d\n', nAgree, nIn);
 fprintf('  εκ των οποίων ΣΤΑΤΙΣΤΙΚΑ σημαντικοί: %d/%d\n', nSig, nIn);
-fprintf('Μη αντιστοιχίσιμοι (εκτός/χωρίς ονομασία): %d\n', 17-nIn);
-fprintf('\nΕΥΡΗΜΑ: μόνο %d/17 ισχυρισμοί δυναμικής αφορούν καν τα triple-network\n', nIn);
+fprintf('Μη αντιστοιχίσιμοι (εκτός/χωρίς ονομασία): %d\n', 18-nIn);
+fprintf('\nΕΥΡΗΜΑ: μόνο %d/18 συγκρίσεις δυναμικής αφορούν καν τα triple-network\n', nIn);
 fprintf('δίκτυα (DMN/ECN)· οι υπόλοιποι είναι visual/audial/SMN/frontoparietal.\n');
 fprintf('ΕΠΙΦΥΛΑΞΗ: αντιστοίχιση ονομαστική· IC12 υβριδικό DMN/LFr· 2.2 δεν διαχωρίζει posterior.\n');
 

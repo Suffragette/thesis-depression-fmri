@@ -68,7 +68,7 @@ salience 102–105**.
 ### Finding-by-finding
 | Analysis | Question it answers | Result file |
 |---|---|---|
-| `table6_full.m` | How many of the seventeen Table-6 treatment claims are testable in scope, and do they reproduce? | `results/table6_finding.txt` |
+| `table6_full.m` | Of the eighteen Table-6 comparisons (17 nominally significant), how many are testable in triple-network scope, and do they reproduce? | `results/table6_finding.txt` |
 | `repro1012_full.m` | Does the central "10-12" finding and its five sub-claims reproduce? | `results/repro_1012.txt` |
 
 ### Exploratory / additional (kept subordinate)
