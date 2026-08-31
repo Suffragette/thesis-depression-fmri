@@ -6,7 +6,6 @@ authors:
   - family-names: Kouimountzi
     given-names: Christina
 type: software
-license: MIT
 keywords:
   - reproducibility
   - resting-state fMRI
@@ -19,8 +18,23 @@ references:
     title: "Brain networks connectivity in mild to moderate depression: resting state fMRI study with implications to nonpharmacological treatment"
     authors:
       - family-names: Bezmaternykh
-        given-names: D. D.
+        given-names: Dmitry D.
+      - family-names: Melnikov
+        given-names: Mikhail Ye.
+      - family-names: Savelov
+        given-names: Andrey A.
+      - family-names: Kozlova
+        given-names: Lyudmila I.
+      - family-names: Petrovskiy
+        given-names: Evgeniy D.
+      - family-names: Natarova
+        given-names: Kira A.
+      - family-names: Shtark
+        given-names: Mark B.
     year: 2021
     journal: "Neural Plasticity"
     volume: "2021"
-    notes: "Article 8846097; https://doi.org/10.1155/2021/8846097; PMID 33510782"
+    start: 1
+    end: 15
+    doi: "10.1155/2021/8846097"
+    notes: "Article 8846097; PMID 33510782"
