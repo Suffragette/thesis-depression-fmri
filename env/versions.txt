@@ -1,16 +1,33 @@
 # Exact software versions (COBIDAS reproducibility)
+# All versions verified from dataset_description.json files, run logs,
+# and direct environment queries (python3 --version, MATLAB version).
 
-fMRIPrep      : 21.0.2 (public derivatives, ds002748) and 25.2.x (planned for robustness)
-GIFT          : gift-master (trendscenter), MOO-ICAR
-NeuroMark 2.2 : fMRI 2.2, 105 networks, modelorder-multi. PRIMARY network identification (Studies 1 and 2).
-NeuroMark 1.0 : fMRI 1.0 template (Neuromark_fMRI_1.0.nii). Used for the network-definition SENSITIVITY branch (Study 2 posterior/whole/anterior DMN; see docs/05_results.md, Level 2).
-MATLAB        : R2026a (26.1.0.3276743, Update 3)
-SPM           : SPM12 (template reslicing)
-NBS toolbox   : 1.2
-Python        : 3.13
-nilearn       : 0.14.0
-nibabel       : 5.4.2
+## Environments
+Preprocessing environment : Neurodesk (cloud, containerised; GitHub-authenticated)
+Analysis environment      : Local workstation (macOS)
+
+## Preprocessing (Neurodesk)
+fMRIPrep (Study 1 primary) : 21.0.2  (public derivatives distributed with ds002748)
+fMRIPrep (Study 1 v25)     : 25.2.5  (--fs-no-reconall; executed as preprocessing-sensitivity branch)
+fMRIPrep (Study 2)         : 25.2.5  (ds003007)
+Python                     : 3.13.14 (Neurodesk)
+nilearn                    : 0.14.0
+nibabel                    : 5.4.2
+
+## Analysis (local, MATLAB)
+MATLAB                     : R2026a (26.1.0.3276743, Update 3)
+GIFT                       : gift-master (trendscenter), MOO-ICAR
+NeuroMark 2.2              : fMRI 2.2, 105 networks, modelorder-multi.
+                             PRIMARY network identification (Studies 1 and 2).
+NeuroMark 1.0              : fMRI 1.0 (Neuromark_fMRI_1.0.nii).
+                             Network-definition SENSITIVITY branch (Study 2 posterior/whole/anterior DMN).
+SPM                        : SPM12 (template reslicing only)
+NBS toolbox                : 1.2
 
 # Notes
-# - Data-driven ICA branch (Study 1 sensitivity) uses GIFT Infomax + ICASSO, 20 components.
+# - Data-driven ICA branch (Study 1 sensitivity): GIFT Infomax + ICASSO, 20 components.
 # - Triple-network component indices (NeuroMark 2.2): ECN 91-93, DMN 94-101, salience 102-105.
+# - Preprocessing (fMRIPrep + nilearn denoising) ran on Neurodesk; all MATLAB
+#   analysis (network definition, FNC, NBS, TOST) ran locally on the workstation.
+# - Study 1 primary used the public fMRIPrep 21.0.2 derivatives (not re-run from raw);
+#   Study 2 and the Study 1 v25 sensitivity branch used fMRIPrep 25.2.5.
